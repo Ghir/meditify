@@ -1,0 +1,13 @@
+.item {
+  color: #616469;
+  width: 100%;
+  --min-height: 60px;
+
+  &__title {
+    font-size: 14px;
+  }
+
+  &__icon {
+    font-size: 13px;
+  }
+}

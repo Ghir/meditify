@@ -1,0 +1,42 @@
+# compiled output
+dist
+/tmp
+android
+ios
+www
+
+# dependencies
+node_modules
+
+# e2e
+e2e
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+documentation
+
+#System Files
+.DS_Store
+*.pyc
+.vscode

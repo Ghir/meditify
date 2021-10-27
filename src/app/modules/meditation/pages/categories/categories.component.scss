@@ -1,0 +1,22 @@
+.title {
+  font-size: 28px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+ion-content {
+  --padding-top: 20px;
+  --ion-grid-padding: 8px;
+  --ion-grid-column-padding: 8px;
+  --background: url('../../../../../assets/images/mountains.jpg') center / cover;
+
+  ion-col {
+    --ion-card-background: #ddf0fe;
+
+    &:first-child,
+    &:last-child {
+      --ion-card-background: #f9eedb;
+    }
+  }
+}

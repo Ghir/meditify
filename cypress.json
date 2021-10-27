@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "viewportHeight": 812,
+  "viewportWidth": 375,
+  "testFiles": ["**/*.spec.*"],
+  "video": false,
+  "videoUploadOnPasses": false,
+  "retries": {
+    "runMode": 3
+  }
+}

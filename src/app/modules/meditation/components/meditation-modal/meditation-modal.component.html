@@ -1,0 +1,36 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <ion-icon
+      class="header__back"
+      name="close-outline"
+      (click)="dismissModal()"
+    ></ion-icon>
+    <h4 class="header__title">{{ meditation.title }}</h4>
+
+    <div fxLayoutAlign="center">
+      <app-buttons-select
+        [options]="mediaOptions"
+        [value]="mediaSelection"
+        (valueChange)="onMediaSelectionChange($event)"
+        *ngIf="showButtons"
+      ></app-buttons-select>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-media-content
+    [hidden]="mediaSelection.includes(content.text)"
+    [meditation]="meditation"
+    [seekbarValue]="$seekbarValue | async"
+    [media]="stateService.$media | async"
+    (playAudio)="onPlay()"
+    (pauseAudio)="onPause()"
+    (seekEnd)="onSeekEnd($event)"
+  ></app-media-content>
+
+  <app-text-content
+    [hidden]="mediaSelection.includes(content.media)"
+    [text]="meditation.text"
+  ></app-text-content>
+</ion-content>

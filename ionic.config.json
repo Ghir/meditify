@@ -1,0 +1,8 @@
+{
+  "name": "Meditify",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "60ad29ba"
+}

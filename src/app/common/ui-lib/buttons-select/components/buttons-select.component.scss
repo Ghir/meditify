@@ -1,0 +1,24 @@
+.selection {
+  width: 168px;
+  padding: 8px;
+
+  &__button {
+    font-size: 12px;
+    width: 70px;
+    height: 30px;
+    box-shadow: #0000001f 0 1px 2px;
+    border-radius: 15px;
+    --background: #fff;
+    --color: #666;
+    --border-width: 2px;
+    --border-style: solid;
+    --border-color: #bebdbd;
+    --background-activated: none;
+    --border-radius: 15px;
+
+    &-selected {
+      --background: #9eb4bb;
+      --color: #fff;
+    }
+  }
+}

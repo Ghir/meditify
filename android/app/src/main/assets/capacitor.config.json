@@ -1,0 +1,6 @@
+{
+	"appId": "Meditify",
+	"appName": "Meditify",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

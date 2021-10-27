@@ -1,0 +1,9 @@
+.card {
+  height: 245px;
+  width: 145px;
+  margin: auto;
+
+  &:focus {
+    outline: none;
+  }
+}

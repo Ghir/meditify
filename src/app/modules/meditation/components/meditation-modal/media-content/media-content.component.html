@@ -1,0 +1,42 @@
+<div class="media" fxLayout="column" fxLayoutAlign="space-around center">
+  <img
+    class="media__image"
+    *ngIf="meditation.imageUrl"
+    [src]="meditation.imageUrl"
+  />
+
+  <div class="commands" fxLayout="column" fxLayoutAlign="center center">
+    <div class="commands__play" fxLayoutAlign="center center">
+      <ion-icon
+        class="commands__icon"
+        name="play"
+        *ngIf="!media.playing"
+        (click)="playAudio.emit()"
+      ></ion-icon>
+
+      <ion-icon
+        class="commands__icon"
+        name="pause"
+        *ngIf="media.playing"
+        (click)="pauseAudio.emit()"
+      ></ion-icon>
+    </div>
+
+    <ion-range
+      class="commands__range"
+      name="seekbar"
+      mode="md"
+      min="0"
+      [max]="media.durationSec"
+      [value]="seekbarValue"
+      (mouseup)="seekEnd.emit($event)"
+      (touchend)="seekEnd.emit($event)"
+    >
+    </ion-range>
+
+    <div class="commands__progress" fxLayoutAlign="space-between center">
+      <span>{{ media.time }}</span>
+      <span>{{ media.duration }}</span>
+    </div>
+  </div>
+</div>

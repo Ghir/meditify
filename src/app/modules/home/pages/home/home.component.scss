@@ -1,0 +1,14 @@
+.home {
+  height: 100%;
+  background: url('../../../../../assets/images/mountains.jpg');
+  background-size: cover;
+
+  &__quote {
+    font-size: 18px;
+    line-height: 27px;
+    font-style: italic;
+    opacity: 0.8;
+    color: #1f1f1f;
+    text-align: center;
+  }
+}

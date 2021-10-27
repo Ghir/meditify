@@ -1,0 +1,18 @@
+.header {
+  &__back {
+    font-size: 25px;
+    color: #808289;
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+
+  &__title {
+    margin: 0px 25px 8px;
+    text-align: center;
+    color: #1f1f1f;
+  }
+}
+
+ion-toolbar {
+  --background: #e7f4fd;
+}

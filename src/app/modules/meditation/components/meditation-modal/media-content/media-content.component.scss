@@ -1,0 +1,44 @@
+.media {
+  padding-bottom: 20px;
+  height: 100%;
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.commands {
+  width: 85%;
+
+  &__play {
+    width: 38px;
+    height: 38px;
+    background-color: #4e6b8c;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    --ionicon-stroke-width: 11px;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &__range {
+    --knob-size: 14px;
+    --bar-background: #d3dae2;
+    --bar-background-active: #4e6b8c;
+    --bar-height: 3px;
+    --knob-size: 18px;
+    width: 315px;
+    max-height: 32px;
+    padding: 0 7px;
+    width: 100%;
+  }
+
+  &__progress {
+    width: 100%;
+    color: #999da1;
+    font-weight: 500;
+    font-size: 15px;
+  }
+}

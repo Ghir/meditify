@@ -1,0 +1,19 @@
+<ion-item (click)="selected.emit(meditation)">
+  <div class="item" fxLayoutAlign="space-between center">
+    <span class="item__title">{{ meditation.title | titlecase }}</span>
+
+    <div fxLayoutAlign="space-between center" fxLayoutGap="8px">
+      <ion-icon
+        class="item__icon"
+        *ngIf="meditation[content.media]"
+        name="musical-note-outline"
+      ></ion-icon>
+
+      <ion-icon
+        class="item__icon"
+        *ngIf="meditation.text"
+        name="document-text-outline"
+      ></ion-icon>
+    </div>
+  </div>
+</ion-item>

@@ -1,0 +1,25 @@
+<div
+  class="header"
+  fxLayout="column"
+  fxLayoutAlign="space-between"
+  fxLayoutGap="8px"
+>
+  <div>
+    <ion-icon
+      name="arrow-back-outline"
+      class="header__back"
+      routerDirection="back"
+      [routerLink]="['/meditation']"
+    ></ion-icon>
+  </div>
+
+  <div fxLayoutAlign="space-between center" fxLayoutGap="16px">
+    <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="4px">
+      <span class="header__title">{{ category.name | titlecase }}</span>
+
+      <p class="header__description">{{ category.description }}</p>
+    </div>
+
+    <img class="header__image" [src]="category.imageUrl" fxFlex="0 0 90px" />
+  </div>
+</div>

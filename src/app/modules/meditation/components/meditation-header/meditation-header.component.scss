@@ -1,0 +1,19 @@
+.header {
+  color: #111b22;
+  padding: 45px 25px 25px;
+  height: 270px;
+
+  &__back {
+    font-size: 20px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

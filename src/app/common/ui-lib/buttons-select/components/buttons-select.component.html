@@ -1,0 +1,11 @@
+<div class="selection" fxLayoutAlign="space-between">
+  <ion-button
+    class="selection__button"
+    fill="solid"
+    *ngFor="let option of options"
+    [ngClass]="{ 'selection__button-selected': value.includes(option) }"
+    (click)="toggle(option)"
+  >
+    {{ option | titlecase }}
+  </ion-button>
+</div>

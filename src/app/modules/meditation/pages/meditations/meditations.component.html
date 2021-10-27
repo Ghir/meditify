@@ -1,0 +1,22 @@
+<ion-header>
+  <app-meditation-header [category]="$category | async"></app-meditation-header>
+
+  <div fxLayoutAlign="center">
+    <app-buttons-select
+      [multiple]="true"
+      [options]="mediaOptions"
+      [value]="$mediaSelection | async"
+      (valueChange)="$mediaSelection.next($event)"
+    ></app-buttons-select>
+  </div>
+</ion-header>
+
+<ion-content forceOverscroll>
+  <ion-list lines="full">
+    <app-meditation-item
+      *ngFor="let meditation of $meditations | async"
+      [meditation]="meditation"
+      (selected)="presentModal($event)"
+    ></app-meditation-item>
+  </ion-list>
+</ion-content>

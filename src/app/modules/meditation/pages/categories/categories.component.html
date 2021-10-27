@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <h4 class="title">Categories</h4>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll>
+  <ion-grid>
+    <ion-row class="ion-justify-content-around">
+      <ion-col *ngFor="let category of $categories | async">
+        <app-category-card [category]="category"></app-category-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
