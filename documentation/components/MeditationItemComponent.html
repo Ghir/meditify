@@ -315,12 +315,12 @@ export class MeditationItemComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ion-item (click)&#x3D;&quot;selected.emit(meditation)&quot;&gt;
   &lt;div class&#x3D;&quot;item&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
-    &lt;span class&#x3D;&quot;item__title&quot;&gt;{{ meditation.title }}&lt;/span&gt;
+    &lt;span class&#x3D;&quot;item__title&quot;&gt;{{ meditation.title | titlecase }}&lt;/span&gt;
 
     &lt;div fxLayoutAlign&#x3D;&quot;space-between center&quot; fxLayoutGap&#x3D;&quot;8px&quot;&gt;
       &lt;ion-icon
         class&#x3D;&quot;item__icon&quot;
-        *ngIf&#x3D;&quot;meditation[content.MEDIA]&quot;
+        *ngIf&#x3D;&quot;meditation[content.media]&quot;
         name&#x3D;&quot;musical-note-outline&quot;
       &gt;&lt;/ion-icon&gt;
 
@@ -380,7 +380,7 @@ export class MeditationItemComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-item (click)="selected.emit(meditation)">  <div class="item" fxLayoutAlign="space-between center">    <span class="item__title">{{ meditation.title }}</span>    <div fxLayoutAlign="space-between center" fxLayoutGap="8px">      <ion-icon        class="item__icon"        *ngIf="meditation[content.MEDIA]"        name="musical-note-outline"      ></ion-icon>      <ion-icon        class="item__icon"        *ngIf="meditation.text"        name="document-text-outline"      ></ion-icon>    </div>  </div></ion-item></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-item (click)="selected.emit(meditation)">  <div class="item" fxLayoutAlign="space-between center">    <span class="item__title">{{ meditation.title | titlecase }}</span>    <div fxLayoutAlign="space-between center" fxLayoutGap="8px">      <ion-icon        class="item__icon"        *ngIf="meditation[content.media]"        name="musical-note-outline"      ></ion-icon>      <ion-icon        class="item__icon"        *ngIf="meditation.text"        name="document-text-outline"      ></ion-icon>    </div>  </div></ion-item></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsSelectComponent', 'selector': 'app-buttons-select'},{'name': 'CategoriesComponent', 'selector': 'app-categories'},{'name': 'CategoryCardComponent', 'selector': 'app-category-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MediaContentComponent', 'selector': 'app-media-content'},{'name': 'MeditationHeaderComponent', 'selector': 'app-meditation-header'},{'name': 'MeditationItemComponent', 'selector': 'app-meditation-item'},{'name': 'MeditationModalComponent', 'selector': 'app-meditation-modal'},{'name': 'MeditationsComponent', 'selector': 'app-meditations'},{'name': 'TextContentComponent', 'selector': 'app-text-content'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MeditationItemComponent'};

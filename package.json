@@ -18,7 +18,8 @@
     "build-storybook": "npm run docs:json && build-storybook",
     "copy:ios": "ionic capacitor copy ios",
     "copy:android": "ionic capacitor copy android",
-    "open:ios": "ionic capacitor run ios -l --external"
+    "open:ios": "ionic capacitor run ios -l --external",
+    "open:android": "ionic capacitor run android -l --external"
   },
   "private": true,
   "dependencies": {

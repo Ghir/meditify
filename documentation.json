@@ -2766,21 +2766,21 @@
         "name": "initialState",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "MeditationState",
-        "defaultValue": "{\n  // data\n  meditations: null,\n  categories: null,\n  // state\n  isCategoriesLoading: false,\n  isCategoriesLoaded: false,\n  isCategoriesError: false,\n  isMeditationsLoading: false,\n  isMeditationsLoaded: false,\n  isMeditationsError: false,\n}"
-      },
-      {
-        "name": "initialState",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/app/modules/home/store/reducers/home.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
         "type": "HomeState",
         "defaultValue": "{\n  // data\n  quote: null,\n  // state\n  isQuoteLoading: false,\n  isQuoteLoaded: false,\n  isQuoteError: false,\n}"
+      },
+      {
+        "name": "initialState",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "MeditationState",
+        "defaultValue": "{\n  // data\n  meditations: null,\n  categories: null,\n  // state\n  isCategoriesLoading: false,\n  isCategoriesLoaded: false,\n  isCategoriesError: false,\n  isMeditationsLoading: false,\n  isMeditationsLoaded: false,\n  isMeditationsError: false,\n}"
       },
       {
         "name": "loadCategories",
@@ -2996,16 +2996,6 @@
         "name": "reducer",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "",
-        "defaultValue": "(state: MeditationState | undefined, action: Action) =>\n  meditationReducer(state, action)"
-      },
-      {
-        "name": "reducer",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/app/modules/home/store/reducers/home.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
@@ -3013,14 +3003,14 @@
         "defaultValue": "(state: HomeState | undefined, action: Action) =>\n  homeReducer(state, action)"
       },
       {
-        "name": "reducers",
+        "name": "reducer",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/meditation/store/reducers/meditation.state.ts",
+        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
-        "type": "object",
-        "defaultValue": "{\n  meditation: reducer,\n}"
+        "type": "",
+        "defaultValue": "(state: MeditationState | undefined, action: Action) =>\n  meditationReducer(state, action)"
       },
       {
         "name": "reducers",
@@ -3031,6 +3021,16 @@
         "deprecationMessage": "",
         "type": "object",
         "defaultValue": "{\n  home: reducer,\n}"
+      },
+      {
+        "name": "reducers",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/modules/meditation/store/reducers/meditation.state.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\n  meditation: reducer,\n}"
       },
       {
         "name": "selectCategories",

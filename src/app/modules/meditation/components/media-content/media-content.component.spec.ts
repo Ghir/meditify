@@ -4,7 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule, IonIcon, IonRange } from '@ionic/angular';
 
 // Components
-import { MediaContentComponent } from '@meditation/components/meditation-modal/media-content/media-content.component';
+import { MediaContentComponent } from '@meditation/components/media-content/media-content.component';
 
 // Mocks
 import { meditationMock } from '@meditation/mocks/meditation.mock';

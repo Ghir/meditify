@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/angular';
 
 // Components
-import { TextContentComponent } from '@meditation/components/meditation-modal/text-content/text-content.component';
+import { TextContentComponent } from '@meditation/components/text-content/text-content.component';
 
 export default {
   component: TextContentComponent,

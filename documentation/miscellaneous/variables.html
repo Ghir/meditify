@@ -95,10 +95,10 @@
                             <a href="#INITIAL_MEDIA_STATE" title="src/app/modules/meditation/constants/media.constants.ts" ><b>INITIAL_MEDIA_STATE</b>&nbsp;&nbsp;&nbsp;(src/.../media.constants.ts)</a>
                         </li>
                         <li>
-                            <a href="#initialState" title="src/app/modules/meditation/store/reducers/meditation.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.reducer.ts)</a>
+                            <a href="#initialState" title="src/app/modules/home/store/reducers/home.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../home.reducer.ts)</a>
                         </li>
                         <li>
-                            <a href="#initialState" title="src/app/modules/home/store/reducers/home.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../home.reducer.ts)</a>
+                            <a href="#initialState" title="src/app/modules/meditation/store/reducers/meditation.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#loadCategories" title="src/app/modules/meditation/store/actions/meditation.actions.ts" ><b>loadCategories</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.actions.ts)</a>
@@ -164,16 +164,16 @@
                             <a href="#quoteMock" title="src/app/modules/home/mocks/quote.mock.ts" ><b>quoteMock</b>&nbsp;&nbsp;&nbsp;(src/.../quote.mock.ts)</a>
                         </li>
                         <li>
-                            <a href="#reducer" title="src/app/modules/meditation/store/reducers/meditation.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.reducer.ts)</a>
-                        </li>
-                        <li>
                             <a href="#reducer" title="src/app/modules/home/store/reducers/home.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../home.reducer.ts)</a>
                         </li>
                         <li>
-                            <a href="#reducers" title="src/app/modules/meditation/store/reducers/meditation.state.ts" ><b>reducers</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.state.ts)</a>
+                            <a href="#reducer" title="src/app/modules/meditation/store/reducers/meditation.reducer.ts" ><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#reducers" title="src/app/modules/home/store/reducers/home.state.ts" ><b>reducers</b>&nbsp;&nbsp;&nbsp;(src/.../home.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducers" title="src/app/modules/meditation/store/reducers/meditation.state.ts" ><b>reducers</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.state.ts)</a>
                         </li>
                         <li>
                             <a href="#selectCategories" title="src/app/modules/meditation/store/selectors/meditation.selector.ts" ><b>selectCategories</b>&nbsp;&nbsp;&nbsp;(src/.../meditation.selector.ts)</a>
@@ -569,9 +569,9 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-  id: &#x27;id&#x27;,
-  name: &#x27;name&#x27;,
-  description: &#x27;description&#x27;,
+  id: &#x27;categoryId&#x27;,
+  name: &#x27;Category Name&#x27;,
+  description: &#x27;Category Description&#x27;,
   imageUrl: &#x27;http://domain.com&#x27;,
 }</code>
                     </td>
@@ -1324,11 +1324,18 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
   id: &#x27;id&#x27;,
-  categoryId: &#x27;id&#x27;,
-  title: &#x27;title&#x27;,
-  text: &#x60;text&#x60;,
+  categoryId: &#x27;categoryId&#x27;,
+  title: &#x27;Meditation title&#x27;,
+  text: &#x60;
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo
+  r incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s
+  unt in culpa qui officia deserunt mollit anim id est laborum.
+  &#x60;,
   media: &#x27;https://domain.com&#x27;,
-  imageUrl: &#x27;image.jpg&#x27;,
+  imageUrl: &#x27;https://picsum.photos/seed/picsum/400/600&#x27;,
 }</code>
                     </td>
                 </tr>

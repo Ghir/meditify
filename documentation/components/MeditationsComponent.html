@@ -577,14 +577,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { selectCategoryById } from &#x27;./../../store/selectors/meditation.selector&#x27;;
-import { ChangeDetectionStrategy, Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 
 import { ModalController } from &#x27;@ionic/angular&#x27;;
 
 import { BehaviorSubject, combineLatest, Observable } from &#x27;rxjs&#x27;;
-import { map, filter, tap } from &#x27;rxjs/operators&#x27;;
+import { map, filter } from &#x27;rxjs/operators&#x27;;
 
 import { Store } from &#x27;@ngrx/store&#x27;;
 
@@ -597,10 +596,11 @@ import {
 import { Category } from &#x27;@meditation/models/category.model&#x27;;
 
 // Components
-import { MeditationModalComponent } from &#x27;@meditation/components/meditation-modal/meditation-modal.component&#x27;;
+import { MeditationModalComponent } from &#x27;@meditation/pages/meditation-modal/meditation-modal.component&#x27;;
 
 // Selectors
 import { selectMeditationsByCategoryId } from &#x27;@meditation/store/selectors/meditation.selector&#x27;;
+import { selectCategoryById } from &#x27;@meditation/store/selectors/meditation.selector&#x27;;
 
 @Component({
   selector: &#x27;app-meditations&#x27;,

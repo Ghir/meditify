@@ -24,8 +24,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     <a data-type="chapter-link" href="index.html"><span class="icon ion-ios-home"></span>Getting started</a>
                     <ul class="links">
                         <li class="link">
-                            <a href="index.html" data-type="chapter-link">
+                            <a href="overview.html" data-type="chapter-link">
                                 <span class="icon ion-ios-keypad"></span>Overview
+                            </a>
+                        </li>
+                        <li class="link">
+                            <a href="index.html" data-type="chapter-link">
+                                <span class="icon ion-ios-paper"></span>README
                             </a>
                         </li>
                                 <li class="link">
@@ -120,13 +125,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/MeditationModule.html" data-type="entity-link" >MeditationModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' : 'data-target="#xs-components-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' }>
+                                            'data-target="#components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' : 'data-target="#xs-components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' :
-                                            'id="xs-components-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' :
+                                            'id="xs-components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
                                             <li class="link">
                                                 <a href="components/CategoriesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CategoriesComponent</a>
                                             </li>
@@ -155,13 +160,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' : 'data-target="#xs-injectables-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' }>
+                                        'data-target="#injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' : 'data-target="#xs-injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' :
-                                        'id="xs-injectables-links-module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' :
+                                        'id="xs-injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
                                         <li class="link">
                                             <a href="injectables/AudioService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AudioService</a>
                                         </li>

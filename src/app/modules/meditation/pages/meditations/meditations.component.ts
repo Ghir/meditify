@@ -1,11 +1,10 @@
-import { selectCategoryById } from './../../store/selectors/meditation.selector';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ModalController } from '@ionic/angular';
 
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { map, filter, tap } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 
@@ -18,10 +17,11 @@ import {
 import { Category } from '@meditation/models/category.model';
 
 // Components
-import { MeditationModalComponent } from '@meditation/components/meditation-modal/meditation-modal.component';
+import { MeditationModalComponent } from '@meditation/pages/meditation-modal/meditation-modal.component';
 
 // Selectors
 import { selectMeditationsByCategoryId } from '@meditation/store/selectors/meditation.selector';
+import { selectCategoryById } from '@meditation/store/selectors/meditation.selector';
 
 @Component({
   selector: 'app-meditations',

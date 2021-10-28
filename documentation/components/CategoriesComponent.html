@@ -276,7 +276,7 @@ export class CategoriesComponent {
   &lt;/ion-toolbar&gt;
 &lt;/ion-header&gt;
 
-&lt;ion-content forceOverscroll [scrollY]&#x3D;&quot;true&quot;&gt;
+&lt;ion-content forceOverscroll&gt;
   &lt;ion-grid&gt;
     &lt;ion-row class&#x3D;&quot;ion-justify-content-around&quot;&gt;
       &lt;ion-col *ngFor&#x3D;&quot;let category of $categories | async&quot;&gt;
@@ -342,7 +342,7 @@ ion-content {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar>    <h4 class="title">Categories</h4>  </ion-toolbar></ion-header><ion-content forceOverscroll [scrollY]="true">  <ion-grid>    <ion-row class="ion-justify-content-around">      <ion-col *ngFor="let category of $categories | async">        <app-category-card [category]="category"></app-category-card>      </ion-col>    </ion-row>  </ion-grid></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar>    <h4 class="title">Categories</h4>  </ion-toolbar></ion-header><ion-content forceOverscroll>  <ion-grid>    <ion-row class="ion-justify-content-around">      <ion-col *ngFor="let category of $categories | async">        <app-category-card [category]="category"></app-category-card>      </ion-col>    </ion-row>  </ion-grid></ion-content></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonsSelectComponent', 'selector': 'app-buttons-select'},{'name': 'CategoriesComponent', 'selector': 'app-categories'},{'name': 'CategoryCardComponent', 'selector': 'app-category-card'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MediaContentComponent', 'selector': 'app-media-content'},{'name': 'MeditationHeaderComponent', 'selector': 'app-meditation-header'},{'name': 'MeditationItemComponent', 'selector': 'app-meditation-item'},{'name': 'MeditationModalComponent', 'selector': 'app-meditation-modal'},{'name': 'MeditationsComponent', 'selector': 'app-meditations'},{'name': 'TextContentComponent', 'selector': 'app-text-content'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CategoriesComponent'};

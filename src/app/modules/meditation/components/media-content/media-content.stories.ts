@@ -12,7 +12,7 @@ import {
 import { action } from '@storybook/addon-actions';
 
 // Components
-import { MediaContentComponent } from '@meditation/components/meditation-modal/media-content/media-content.component';
+import { MediaContentComponent } from '@meditation/components/media-content/media-content.component';
 
 // Mocks
 import { meditationMock } from '@meditation/mocks/meditation.mock';

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 // Components
-import { TextContentComponent } from '@meditation/components/meditation-modal/text-content/text-content.component';
+import { TextContentComponent } from '@meditation/components/text-content/text-content.component';
 
 describe('TextContentComponent', () => {
   let component: TextContentComponent;

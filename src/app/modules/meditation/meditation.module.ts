@@ -18,9 +18,9 @@ import { AudioStateService } from '@meditation/services/audio-state.service';
 import { MeditationsService } from '@meditation/services/meditations.service';
 
 // Components
-import { MeditationModalComponent } from '@meditation/components/meditation-modal/meditation-modal.component';
-import { TextContentComponent } from '@meditation/components/meditation-modal/text-content/text-content.component';
-import { MediaContentComponent } from '@meditation/components/meditation-modal/media-content/media-content.component';
+import { MeditationModalComponent } from '@meditation/pages/meditation-modal/meditation-modal.component';
+import { TextContentComponent } from '@meditation/components/text-content/text-content.component';
+import { MediaContentComponent } from '@meditation/components/media-content/media-content.component';
 import { CategoryCardComponent } from '@meditation/components/category-card/category-card.component';
 import { CategoriesComponent } from '@meditation/pages/categories/categories.component';
 import { MeditationsComponent } from '@meditation/pages/meditations/meditations.component';
