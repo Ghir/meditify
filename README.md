@@ -2,6 +2,19 @@
 
 This is a personal project and a base for a mobile application. It consists of two main functionalities: a Home page, that shows a motivational daily quote; a Meditation page, where the user can choose a meditation category, filter the meditations by type, and interact with the media in the modal that opens. Every practice can guide the user through text contents, audio and images.
 
+&nbsp;
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/33903713/139341978-27fc71e1-95bb-44e9-b327-ed0106ddb34f.png" width="16%" />
+  <img src="https://user-images.githubusercontent.com/33903713/139343073-b7084f56-33f7-486d-a36c-ba5a444f2034.png" width="16%" />
+  <img src="https://user-images.githubusercontent.com/33903713/139343058-7e703d0c-1dee-4788-b869-20f6168c2a95.png" width="16%" />
+  <img src="https://user-images.githubusercontent.com/33903713/139343037-04bd7c8e-c0ea-4161-83fe-88d40859b4ba.png" width="16%" />
+  <img src="https://user-images.githubusercontent.com/33903713/139342979-2c3c4e6b-0d38-4e72-b3f8-812ab694f8e1.png" width="16%" />
+  <img src="https://user-images.githubusercontent.com/33903713/139342957-9c8ee005-674e-49c3-aba7-9cc1d905e00f.png" width="16%" />
+</p>
+
+&nbsp;
+
 # Technologies
 
 ## Frontend
