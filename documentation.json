@@ -1547,7 +1547,7 @@
     {
       "name": "MediaContentComponent",
       "id": "component-MediaContentComponent-8c93b3349cc87f3b819f1ac85f2d113f",
-      "file": "src/app/modules/meditation/components/meditation-modal/media-content/media-content.component.ts",
+      "file": "src/app/modules/meditation/components/media-content/media-content.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
       "entryComponents": [],
@@ -1766,7 +1766,7 @@
     {
       "name": "MeditationModalComponent",
       "id": "component-MeditationModalComponent-2f96db5522ac9f3ec9b3b24b3edce103",
-      "file": "src/app/modules/meditation/components/meditation-modal/meditation-modal.component.ts",
+      "file": "src/app/modules/meditation/pages/meditation-modal/meditation-modal.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
       "entryComponents": [],
@@ -2043,7 +2043,7 @@
     },
     {
       "name": "MeditationsComponent",
-      "id": "component-MeditationsComponent-5f46dfe01852716414bf0083a5e48045",
+      "id": "component-MeditationsComponent-a4f26d96d6dab47371ca3dada70ce512",
       "file": "src/app/modules/meditation/pages/meditations/meditations.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -2190,7 +2190,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { selectCategoryById } from './../../store/selectors/meditation.selector';\nimport { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\nimport { ModalController } from '@ionic/angular';\n\nimport { BehaviorSubject, combineLatest, Observable } from 'rxjs';\nimport { map, filter, tap } from 'rxjs/operators';\n\nimport { Store } from '@ngrx/store';\n\n// Models\nimport {\n  Meditation,\n  content,\n  ContentTypes,\n} from '@meditation/models/meditation.model';\nimport { Category } from '@meditation/models/category.model';\n\n// Components\nimport { MeditationModalComponent } from '@meditation/components/meditation-modal/meditation-modal.component';\n\n// Selectors\nimport { selectMeditationsByCategoryId } from '@meditation/store/selectors/meditation.selector';\n\n@Component({\n  selector: 'app-meditations',\n  templateUrl: './meditations.component.html',\n  styleUrls: ['./meditations.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class MeditationsComponent implements OnInit {\n  mediaOptions = [content.media, content.text];\n\n  $mediaSelection = new BehaviorSubject<ContentTypes[]>([]);\n  $category: Observable<Category>;\n  $meditations: Observable<Meditation[]>;\n\n  constructor(\n    private modalController: ModalController,\n    private route: ActivatedRoute,\n    private store: Store,\n  ) {}\n\n  ngOnInit(): void {\n    const { categoryId } = this.route.snapshot.queryParams;\n\n    this.$category = this.store.select(selectCategoryById(categoryId));\n\n    this.$meditations = combineLatest([\n      this.store\n        .select(selectMeditationsByCategoryId(categoryId))\n        .pipe(filter((meditations) => meditations !== null)),\n      this.$mediaSelection,\n    ]).pipe(\n      map(([meditations, selectedMedia]: [Meditation[], ContentTypes[]]) =>\n        this.filterMeditations(meditations, selectedMedia),\n      ),\n    );\n  }\n\n  async presentModal(meditation: Meditation): Promise<void> {\n    const modal = await this.modalController.create({\n      component: MeditationModalComponent,\n      componentProps: { meditation },\n    });\n\n    await modal.present();\n  }\n\n  private filterMeditations(\n    meditations: Meditation[],\n    selectedMedia: ContentTypes[],\n  ): Meditation[] {\n    return meditations.filter((meditation: Meditation) => {\n      for (const media of selectedMedia) {\n        if (meditation[media] === undefined || meditation[media] === null) {\n          return false;\n        }\n      }\n      return true;\n    });\n  }\n}\n",
+      "sourceCode": "import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\nimport { ModalController } from '@ionic/angular';\n\nimport { BehaviorSubject, combineLatest, Observable } from 'rxjs';\nimport { map, filter } from 'rxjs/operators';\n\nimport { Store } from '@ngrx/store';\n\n// Models\nimport {\n  Meditation,\n  content,\n  ContentTypes,\n} from '@meditation/models/meditation.model';\nimport { Category } from '@meditation/models/category.model';\n\n// Components\nimport { MeditationModalComponent } from '@meditation/pages/meditation-modal/meditation-modal.component';\n\n// Selectors\nimport { selectMeditationsByCategoryId } from '@meditation/store/selectors/meditation.selector';\nimport { selectCategoryById } from '@meditation/store/selectors/meditation.selector';\n\n@Component({\n  selector: 'app-meditations',\n  templateUrl: './meditations.component.html',\n  styleUrls: ['./meditations.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class MeditationsComponent implements OnInit {\n  mediaOptions = [content.media, content.text];\n\n  $mediaSelection = new BehaviorSubject<ContentTypes[]>([]);\n  $category: Observable<Category>;\n  $meditations: Observable<Meditation[]>;\n\n  constructor(\n    private modalController: ModalController,\n    private route: ActivatedRoute,\n    private store: Store,\n  ) {}\n\n  ngOnInit(): void {\n    const { categoryId } = this.route.snapshot.queryParams;\n\n    this.$category = this.store.select(selectCategoryById(categoryId));\n\n    this.$meditations = combineLatest([\n      this.store\n        .select(selectMeditationsByCategoryId(categoryId))\n        .pipe(filter((meditations) => meditations !== null)),\n      this.$mediaSelection,\n    ]).pipe(\n      map(([meditations, selectedMedia]: [Meditation[], ContentTypes[]]) =>\n        this.filterMeditations(meditations, selectedMedia),\n      ),\n    );\n  }\n\n  async presentModal(meditation: Meditation): Promise<void> {\n    const modal = await this.modalController.create({\n      component: MeditationModalComponent,\n      componentProps: { meditation },\n    });\n\n    await modal.present();\n  }\n\n  private filterMeditations(\n    meditations: Meditation[],\n    selectedMedia: ContentTypes[],\n  ): Meditation[] {\n    return meditations.filter((meditation: Meditation) => {\n      for (const media of selectedMedia) {\n        if (meditation[media] === undefined || meditation[media] === null) {\n          return false;\n        }\n      }\n      return true;\n    });\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -2261,7 +2261,7 @@
     {
       "name": "TextContentComponent",
       "id": "component-TextContentComponent-af82bf5681f48358bba3c6d435aec75f",
-      "file": "src/app/modules/meditation/components/meditation-modal/text-content/text-content.component.ts",
+      "file": "src/app/modules/meditation/components/text-content/text-content.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
       "entryComponents": [],
@@ -2527,13 +2527,13 @@
     },
     {
       "name": "MeditationModule",
-      "id": "module-MeditationModule-8fb4ce1f4baf2d5761c83a9acfdcb8a1",
+      "id": "module-MeditationModule-959b65786488838433fdf600d8818298",
       "description": "",
       "deprecationMessage": "",
       "deprecated": false,
       "file": "src/app/modules/meditation/meditation.module.ts",
       "methods": [],
-      "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { FlexLayoutModule } from '@angular/flex-layout';\n\nimport { IonicModule } from '@ionic/angular';\n\nimport { StoreModule } from '@ngrx/store';\nimport { EffectsModule } from '@ngrx/effects';\n\n// Modules\nimport { MeditationRoutingModule } from '@meditation/meditation-routing.module';\nimport { ButtonsSelectModule } from '@buttons-select/buttons-select.module';\n\n// Services\nimport { AudioService } from '@meditation/services/audio.service';\nimport { AudioStateService } from '@meditation/services/audio-state.service';\nimport { MeditationsService } from '@meditation/services/meditations.service';\n\n// Components\nimport { MeditationModalComponent } from '@meditation/components/meditation-modal/meditation-modal.component';\nimport { TextContentComponent } from '@meditation/components/meditation-modal/text-content/text-content.component';\nimport { MediaContentComponent } from '@meditation/components/meditation-modal/media-content/media-content.component';\nimport { CategoryCardComponent } from '@meditation/components/category-card/category-card.component';\nimport { CategoriesComponent } from '@meditation/pages/categories/categories.component';\nimport { MeditationsComponent } from '@meditation/pages/meditations/meditations.component';\nimport { MeditationHeaderComponent } from '@meditation/components/meditation-header/meditation-header.component';\nimport { MeditationItemComponent } from '@meditation/components/meditation-item/meditation-item.component';\n\n// Store\nimport {\n  meditationFeatureKey,\n  reducers,\n} from '@meditation/store/reducers/meditation.state';\n\n// Effects\nimport { MeditationsLoadEffect } from '@meditation/store/effects/meditations-load.effect';\nimport { CategoriesLoadEffect } from '@meditation/store/effects/categories-load.effect';\n\n// Guards\nimport { CategoriesGuard } from '@meditation/guards/categories.guard';\nimport { MeditationsGuard } from '@meditation/guards/meditations.guard';\n\n@NgModule({\n  imports: [\n    CommonModule,\n    FormsModule,\n    IonicModule,\n    MeditationRoutingModule,\n    ButtonsSelectModule,\n    FlexLayoutModule,\n    // store\n    StoreModule.forFeature(meditationFeatureKey, reducers),\n    EffectsModule.forFeature([MeditationsLoadEffect, CategoriesLoadEffect]),\n  ],\n  declarations: [\n    MeditationsComponent,\n    CategoriesComponent,\n    MediaContentComponent,\n    TextContentComponent,\n    MeditationModalComponent,\n    CategoryCardComponent,\n    MeditationHeaderComponent,\n    MeditationItemComponent,\n  ],\n  entryComponents: [MeditationModalComponent],\n  providers: [\n    AudioService,\n    AudioStateService,\n    MeditationsService,\n    MeditationsGuard,\n    CategoriesGuard,\n  ],\n})\nexport class MeditationModule {}\n",
+      "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { FlexLayoutModule } from '@angular/flex-layout';\n\nimport { IonicModule } from '@ionic/angular';\n\nimport { StoreModule } from '@ngrx/store';\nimport { EffectsModule } from '@ngrx/effects';\n\n// Modules\nimport { MeditationRoutingModule } from '@meditation/meditation-routing.module';\nimport { ButtonsSelectModule } from '@buttons-select/buttons-select.module';\n\n// Services\nimport { AudioService } from '@meditation/services/audio.service';\nimport { AudioStateService } from '@meditation/services/audio-state.service';\nimport { MeditationsService } from '@meditation/services/meditations.service';\n\n// Components\nimport { MeditationModalComponent } from '@meditation/pages/meditation-modal/meditation-modal.component';\nimport { TextContentComponent } from '@meditation/components/text-content/text-content.component';\nimport { MediaContentComponent } from '@meditation/components/media-content/media-content.component';\nimport { CategoryCardComponent } from '@meditation/components/category-card/category-card.component';\nimport { CategoriesComponent } from '@meditation/pages/categories/categories.component';\nimport { MeditationsComponent } from '@meditation/pages/meditations/meditations.component';\nimport { MeditationHeaderComponent } from '@meditation/components/meditation-header/meditation-header.component';\nimport { MeditationItemComponent } from '@meditation/components/meditation-item/meditation-item.component';\n\n// Store\nimport {\n  meditationFeatureKey,\n  reducers,\n} from '@meditation/store/reducers/meditation.state';\n\n// Effects\nimport { MeditationsLoadEffect } from '@meditation/store/effects/meditations-load.effect';\nimport { CategoriesLoadEffect } from '@meditation/store/effects/categories-load.effect';\n\n// Guards\nimport { CategoriesGuard } from '@meditation/guards/categories.guard';\nimport { MeditationsGuard } from '@meditation/guards/meditations.guard';\n\n@NgModule({\n  imports: [\n    CommonModule,\n    FormsModule,\n    IonicModule,\n    MeditationRoutingModule,\n    ButtonsSelectModule,\n    FlexLayoutModule,\n    // store\n    StoreModule.forFeature(meditationFeatureKey, reducers),\n    EffectsModule.forFeature([MeditationsLoadEffect, CategoriesLoadEffect]),\n  ],\n  declarations: [\n    MeditationsComponent,\n    CategoriesComponent,\n    MediaContentComponent,\n    TextContentComponent,\n    MeditationModalComponent,\n    CategoryCardComponent,\n    MeditationHeaderComponent,\n    MeditationItemComponent,\n  ],\n  entryComponents: [MeditationModalComponent],\n  providers: [\n    AudioService,\n    AudioStateService,\n    MeditationsService,\n    MeditationsGuard,\n    CategoriesGuard,\n  ],\n})\nexport class MeditationModule {}\n",
       "children": [
         {
           "type": "providers",
@@ -4174,6 +4174,15 @@
         "status": "low"
       },
       {
+        "filePath": "src/app/modules/meditation/components/media-content/media-content.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "MediaContentComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/8",
+        "status": "low"
+      },
+      {
         "filePath": "src/app/modules/meditation/components/meditation-header/meditation-header.component.ts",
         "type": "component",
         "linktype": "component",
@@ -4192,25 +4201,7 @@
         "status": "low"
       },
       {
-        "filePath": "src/app/modules/meditation/components/meditation-modal/media-content/media-content.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "MediaContentComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/8",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/modules/meditation/components/meditation-modal/meditation-modal.component.ts",
-        "type": "component",
-        "linktype": "component",
-        "name": "MeditationModalComponent",
-        "coveragePercent": 0,
-        "coverageCount": "0/16",
-        "status": "low"
-      },
-      {
-        "filePath": "src/app/modules/meditation/components/meditation-modal/text-content/text-content.component.ts",
+        "filePath": "src/app/modules/meditation/components/text-content/text-content.component.ts",
         "type": "component",
         "linktype": "component",
         "name": "TextContentComponent",
@@ -4310,6 +4301,15 @@
         "name": "CategoriesComponent",
         "coveragePercent": 0,
         "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/modules/meditation/pages/meditation-modal/meditation-modal.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "MeditationModalComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/16",
         "status": "low"
       },
       {
