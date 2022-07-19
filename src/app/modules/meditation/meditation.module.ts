@@ -63,7 +63,6 @@ import { MeditationsGuard } from '@meditation/guards/meditations.guard';
     MeditationHeaderComponent,
     MeditationItemComponent,
   ],
-  entryComponents: [MeditationModalComponent],
   providers: [
     AudioService,
     AudioStateService,
