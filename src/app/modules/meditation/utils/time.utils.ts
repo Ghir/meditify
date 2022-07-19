@@ -1,4 +1,4 @@
-import * as moment from 'moment';
+import * as dayjs from 'dayjs';
 
 export const formatTime = (time: number, format: string): string =>
-  moment.utc(time * 1000).format(format);
+  dayjs(time * 1000).format(format);
