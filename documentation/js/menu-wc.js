@@ -125,13 +125,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/MeditationModule.html" data-type="entity-link" >MeditationModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' : 'data-target="#xs-components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
+                                            'data-target="#components-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' : 'data-target="#xs-components-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' :
-                                            'id="xs-components-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' :
+                                            'id="xs-components-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' }>
                                             <li class="link">
                                                 <a href="components/CategoriesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CategoriesComponent</a>
                                             </li>
@@ -160,13 +160,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' : 'data-target="#xs-injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
+                                        'data-target="#injectables-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' : 'data-target="#xs-injectables-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' :
-                                        'id="xs-injectables-links-module-MeditationModule-959b65786488838433fdf600d8818298"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' :
+                                        'id="xs-injectables-links-module-MeditationModule-b9368e6687a83418d0c218f21e58966d"' }>
                                         <li class="link">
                                             <a href="injectables/AudioService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AudioService</a>
                                         </li>
