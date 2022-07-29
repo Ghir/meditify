@@ -2706,21 +2706,21 @@
         "name": "environment",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/environments/environment.prod.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "object",
-        "defaultValue": "{\n  production: true,\n  firebase: {\n    apiKey: 'AIzaSyA02Y_nQiILEC4-TR_cw1hCBFAy3Uzw78I',\n    authDomain: 'meditify-5cd18.firebaseapp.com',\n    databaseURL: 'https://meditify-5cd18.firebaseio.com',\n    projectId: 'meditify-5cd18',\n    storageBucket: 'meditify-5cd18.appspot.com',\n    messagingSenderId: '661526611463',\n    appId: '1:661526611463:web:ad4d2587d5cc613fab8ca2',\n  },\n}"
-      },
-      {
-        "name": "environment",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/environments/environment.ts",
         "deprecated": false,
         "deprecationMessage": "",
         "type": "object",
         "defaultValue": "{\n  production: false,\n  firebase: {\n    apiKey: 'AIzaSyA02Y_nQiILEC4-TR_cw1hCBFAy3Uzw78I',\n    authDomain: 'meditify-5cd18.firebaseapp.com',\n    databaseURL: 'https://meditify-5cd18.firebaseio.com',\n    projectId: 'meditify-5cd18',\n    storageBucket: 'meditify-5cd18.appspot.com',\n    messagingSenderId: '661526611463',\n    appId: '1:661526611463:web:ad4d2587d5cc613fab8ca2',\n  },\n}"
+      },
+      {
+        "name": "environment",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/environments/environment.prod.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\n  production: true,\n  firebase: {\n    apiKey: 'AIzaSyA02Y_nQiILEC4-TR_cw1hCBFAy3Uzw78I',\n    authDomain: 'meditify-5cd18.firebaseapp.com',\n    databaseURL: 'https://meditify-5cd18.firebaseio.com',\n    projectId: 'meditify-5cd18',\n    storageBucket: 'meditify-5cd18.appspot.com',\n    messagingSenderId: '661526611463',\n    appId: '1:661526611463:web:ad4d2587d5cc613fab8ca2',\n  },\n}"
       },
       {
         "name": "formatTime",
@@ -3365,18 +3365,6 @@
           "defaultValue": "{\n  media: 'media',\n  text: 'text',\n} as const"
         }
       ],
-      "src/environments/environment.prod.ts": [
-        {
-          "name": "environment",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "src/environments/environment.prod.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "object",
-          "defaultValue": "{\n  production: true,\n  firebase: {\n    apiKey: 'AIzaSyA02Y_nQiILEC4-TR_cw1hCBFAy3Uzw78I',\n    authDomain: 'meditify-5cd18.firebaseapp.com',\n    databaseURL: 'https://meditify-5cd18.firebaseio.com',\n    projectId: 'meditify-5cd18',\n    storageBucket: 'meditify-5cd18.appspot.com',\n    messagingSenderId: '661526611463',\n    appId: '1:661526611463:web:ad4d2587d5cc613fab8ca2',\n  },\n}"
-        }
-      ],
       "src/environments/environment.ts": [
         {
           "name": "environment",
@@ -3387,6 +3375,18 @@
           "deprecationMessage": "",
           "type": "object",
           "defaultValue": "{\n  production: false,\n  firebase: {\n    apiKey: 'AIzaSyA02Y_nQiILEC4-TR_cw1hCBFAy3Uzw78I',\n    authDomain: 'meditify-5cd18.firebaseapp.com',\n    databaseURL: 'https://meditify-5cd18.firebaseio.com',\n    projectId: 'meditify-5cd18',\n    storageBucket: 'meditify-5cd18.appspot.com',\n    messagingSenderId: '661526611463',\n    appId: '1:661526611463:web:ad4d2587d5cc613fab8ca2',\n  },\n}"
+        }
+      ],
+      "src/environments/environment.prod.ts": [
+        {
+          "name": "environment",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/environments/environment.prod.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "object",
+          "defaultValue": "{\n  production: true,\n  firebase: {\n    apiKey: 'AIzaSyA02Y_nQiILEC4-TR_cw1hCBFAy3Uzw78I',\n    authDomain: 'meditify-5cd18.firebaseapp.com',\n    databaseURL: 'https://meditify-5cd18.firebaseio.com',\n    projectId: 'meditify-5cd18',\n    storageBucket: 'meditify-5cd18.appspot.com',\n    messagingSenderId: '661526611463',\n    appId: '1:661526611463:web:ad4d2587d5cc613fab8ca2',\n  },\n}"
         }
       ],
       "src/app/modules/meditation/utils/time.utils.ts": [

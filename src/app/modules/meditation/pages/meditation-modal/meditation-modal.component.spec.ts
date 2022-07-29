@@ -109,7 +109,7 @@ describe('MeditationModalComponent', () => {
   });
 
   it('should initialize audio stream', (done: DoneFn) => {
-    spyOnProperty(stateServiceMock, 'media', 'get').and.returnValue({});
+    spyOnProperty(stateServiceMock, 'media', 'get').and.returnValue({} as any);
 
     const mediaContent = fixture.debugElement.query(
       By.directive(MediaContentComponent),
