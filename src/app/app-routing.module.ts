@@ -15,6 +15,11 @@ const routes: Routes = [
         (m) => m.MeditationModule,
       ),
   },
+  {
+    path: 'timer',
+    loadChildren: () =>
+      import('./modules/timer/timer.module').then((m) => m.TimerModule),
+  },
 ];
 
 @NgModule({
