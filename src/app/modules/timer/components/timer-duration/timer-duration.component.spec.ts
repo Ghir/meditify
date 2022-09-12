@@ -1,8 +1,13 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, IonInput } from '@ionic/angular';
 
-import { TimerDurationComponent } from '@timer/components/timer-duration.component';
+// Components
+import { TimerDurationComponent } from '@timer/components/timer-duration/timer-duration.component';
+
+// Constants
+import { DEFAULT_DURATION } from '@timer/models/timer.model';
 
 describe('TimerDurationComponent', () => {
   let component: TimerDurationComponent;
@@ -23,5 +28,21 @@ describe('TimerDurationComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain default duration', () => {
+    const input = fixture.debugElement.query(By.directive(IonInput));
+
+    expect(input.nativeElement.value).toEqual(DEFAULT_DURATION);
+  });
+
+  it('should emit input change event', (done: DoneFn) => {
+    component.durationChange.subscribe((duration: number) => {
+      expect(duration).toEqual(1);
+      done();
+    });
+
+    const input = fixture.debugElement.query(By.directive(IonInput));
+    input.triggerEventHandler('ionChange', { detail: { value: 1 } });
   });
 });

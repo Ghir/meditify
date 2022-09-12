@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Models
@@ -11,15 +11,13 @@ import { TimerMenu } from '@timer/models/timer.model';
   styleUrls: ['./timer-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TimerContainerComponent implements OnInit {
+export class TimerContainerComponent {
   timer = timer;
 
   timerMenu: TimerMenu[] = [timer.timer, timer.stats];
   menuSelection: TimerMenu[] = [timer.timer];
 
   constructor(private router: Router) {}
-
-  ngOnInit() {}
 
   onMenuSelectionChange(selection: TimerMenu) {
     this.router.navigate(['timer', selection]);

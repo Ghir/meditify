@@ -36,7 +36,6 @@ export class TimerModalComponent implements OnInit, OnDestroy {
 
   start(): void {
     this.$active.next(true);
-
     interval(1000)
       .pipe(takeUntil(this.$active.pipe(filter((active: boolean) => !active))))
       .subscribe(() => {
