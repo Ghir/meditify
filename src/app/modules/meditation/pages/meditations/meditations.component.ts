@@ -17,7 +17,7 @@ import {
 import { Category } from '@meditation/models/category.model';
 
 // Components
-import { MeditationModalComponent } from '@meditation/pages/meditation-modal/meditation-modal.component';
+import { MeditationModalComponent } from '@meditation/components/meditation-modal/meditation-modal.component';
 
 // Selectors
 import { selectMeditationsByCategoryId } from '@meditation/store/selectors/meditation.selector';

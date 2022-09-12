@@ -11,7 +11,7 @@ import { ButtonsSelectModule } from '@buttons-select/buttons-select.module';
 // Components
 import { TextContentComponent } from '@meditation/components/text-content/text-content.component';
 import { MediaContentComponent } from '@meditation/components/media-content/media-content.component';
-import { MeditationModalComponent } from '@meditation/pages/meditation-modal/meditation-modal.component';
+import { MeditationModalComponent } from '@meditation/components/meditation-modal/meditation-modal.component';
 import { ButtonsSelectComponent } from '@buttons-select/components/buttons-select.component';
 
 // Services
