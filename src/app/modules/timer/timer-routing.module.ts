@@ -2,13 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
-import { TimerComponent } from './pages/timer/timer.component';
+import { TimerContainerComponent } from '@timer/pages/timer-container/timer-container.component';
+import { StatsComponent } from '@timer/pages/stats/stats.component';
+import { TimerComponent } from '@timer/pages/timer/timer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'timer', pathMatch: 'full' },
   {
-    path: 'timer',
-    component: TimerComponent,
+    path: '',
+    component: TimerContainerComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'play',
+        pathMatch: 'full',
+      },
+      {
+        path: 'play',
+        component: TimerComponent,
+      },
+      {
+        path: 'stats',
+        component: StatsComponent,
+      },
+    ],
   },
 ];
 

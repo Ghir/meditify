@@ -1,0 +1,31 @@
+.modal {
+  height: 100%;
+  margin: 16px 0 64px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.time {
+  font-size: 90px;
+  padding-top: 80px;
+}
+
+.actions {
+  height: 180px;
+
+  &__run {
+    width: 50px;
+    height: 50px;
+    background-color: #4e6b8c;
+    border-radius: 50%;
+    margin-top: 32px;
+  }
+
+  &__icon {
+    --ionicon-stroke-width: 11px;
+    font-size: 25px;
+    color: #fff;
+  }
+}

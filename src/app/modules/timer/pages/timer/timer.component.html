@@ -1,13 +1,17 @@
-<ion-header class="header">
-  <ion-toolbar>
-    <div fxLayoutAlign="center">
-      <app-buttons-select
-        [options]="timerMenu"
-        [value]="menuSelection"
-        (valueChange)="onMenuSelectionChange($event)"
-      ></app-buttons-select>
-    </div>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content> </ion-content>
+<div
+  class="timer"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="128px"
+>
+  <app-timer-duration
+    (durationChange)="onDurationChange($event)"
+  ></app-timer-duration>
+  <div
+    class="timer__start"
+    fxLayoutAlign="center center"
+    (click)="presentModal()"
+  >
+    Start
+  </div>
+</div>

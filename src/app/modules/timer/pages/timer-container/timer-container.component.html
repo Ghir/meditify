@@ -1,0 +1,15 @@
+<ion-header class="header">
+  <ion-toolbar>
+    <div fxLayoutAlign="center">
+      <app-buttons-select
+        [options]="timerMenu"
+        [value]="menuSelection"
+        (valueChange)="onMenuSelectionChange($event[0])"
+      ></app-buttons-select>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <router-outlet></router-outlet>
+</ion-content>

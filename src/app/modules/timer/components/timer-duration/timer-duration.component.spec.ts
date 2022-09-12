@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
 
-import { TimerComponent } from './timer.component';
+import { TimerDurationComponent } from '@timer/components/timer-duration.component';
 
-describe('TimerComponent', () => {
-  let component: TimerComponent;
-  let fixture: ComponentFixture<TimerComponent>;
+describe('TimerDurationComponent', () => {
+  let component: TimerDurationComponent;
+  let fixture: ComponentFixture<TimerDurationComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [TimerComponent],
+        declarations: [TimerDurationComponent],
         imports: [IonicModule.forRoot()],
       }).compileComponents();
 
-      fixture = TestBed.createComponent(TimerComponent);
+      fixture = TestBed.createComponent(TimerDurationComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
     }),

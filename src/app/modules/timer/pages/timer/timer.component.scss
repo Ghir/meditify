@@ -1,3 +1,13 @@
-ion-toolbar {
-  --background: #e7f4fd;
+.timer {
+  height: 100%;
+  background: url('../../../../../assets/images/mountains.jpg');
+  background-size: cover;
+
+  &__start {
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    background-color: #4e6b8c;
+    border-radius: 50%;
+  }
 }

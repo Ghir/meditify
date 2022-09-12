@@ -1,23 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-// Models
-import { timer } from '../../models/timer.model';
-import { TimerMenu } from './../../models/timer.model';
+import { ModalController } from '@ionic/angular';
+
+// Components
+import { TimerModalComponent } from '@timer/components/timer-modal/timer-modal.component';
+
+// Constants
+import { DEFAULT_DURATION } from '@timer/models/timer.model';
 
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TimerComponent implements OnInit {
-  timer = timer;
+export class TimerComponent {
+  duration: number;
 
-  timerMenu: TimerMenu[] = [timer.timer, timer.stats];
-  menuSelection: TimerMenu[] = [timer.timer];
+  constructor(private modalController: ModalController) {}
 
-  constructor() {}
+  onDurationChange(duration: number): void {
+    this.duration = duration;
+  }
 
-  ngOnInit() {}
+  async presentModal(): Promise<void> {
+    const duration = this.duration || DEFAULT_DURATION;
 
-  onMenuSelectionChange(selection: TimerMenu[]) {}
+    const modal = await this.modalController.create({
+      component: TimerModalComponent,
+      componentProps: { duration },
+    });
+
+    // TODO
+    modal.onDidDismiss().then((data) => {
+      console.log('time:', data.data?.time);
+    });
+
+    await modal.present();
+  }
 }

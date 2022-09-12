@@ -1,0 +1,32 @@
+<div class="modal" fxLayout="column" fxLayoutAlign="space-between center">
+  <p class="title">Meditation</p>
+
+  <p class="time">{{ $currentTime | async }}</p>
+
+  <div class="actions" fxLayout="column" fxLayoutAlign="flex-end center">
+    <div class="actions__finish" *ngIf="($active | async) === false">
+      <ion-button expand="block" color="medium" (click)="discard()"
+        >discard session</ion-button
+      >
+      <ion-button expand="block" color="medium" (click)="finish()"
+        >finish</ion-button
+      >
+    </div>
+
+    <div class="actions__run" fxLayoutAlign="center center">
+      <ion-icon
+        class="actions__icon"
+        name="play"
+        *ngIf="($active | async) === false"
+        (click)="start()"
+      ></ion-icon>
+
+      <ion-icon
+        class="actions__icon"
+        name="pause"
+        *ngIf="$active | async"
+        (click)="pause()"
+      ></ion-icon>
+    </div>
+  </div>
+</div>

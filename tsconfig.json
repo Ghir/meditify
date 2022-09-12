@@ -17,6 +17,7 @@
       "@environments/*": ["environments/*"],
       "@home/*": ["app/modules/home/*"],
       "@meditation/*": ["app/modules/meditation/*"],
+      "@timer/*": ["app/modules/timer/*"],
       "@buttons-select/*": ["app/common/ui-lib/buttons-select/*"]
     },
     "allowSyntheticDefaultImports": true

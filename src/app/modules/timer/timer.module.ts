@@ -5,14 +5,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { IonicModule } from '@ionic/angular';
 
 // Modules
-import { TimerRoutingModule } from './timer-routing.module';
+import { TimerRoutingModule } from '@timer/timer-routing.module';
 import { ButtonsSelectModule } from '@buttons-select/buttons-select.module';
 
 // Components
-import { TimerComponent } from './pages/timer/timer.component';
+import { TimerContainerComponent } from '@timer/pages/timer-container/timer-container.component';
+import { TimerDurationComponent } from '@timer/components/timer-duration/timer-duration.component';
+import { TimerModalComponent } from '@timer/components/timer-modal/timer-modal.component';
+import { TimerComponent } from '@timer/pages/timer/timer.component';
 
 @NgModule({
-  declarations: [TimerComponent],
+  declarations: [
+    TimerContainerComponent,
+    TimerComponent,
+    TimerDurationComponent,
+    TimerModalComponent,
+  ],
   imports: [
     CommonModule,
     TimerRoutingModule,
