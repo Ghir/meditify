@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 // Constants
-import { DEFAULT_DURATION } from '@timer/models/timer.model';
+import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.model';
 
 @Component({
   selector: 'app-timer-duration',
@@ -18,11 +18,11 @@ export class TimerDurationComponent {
   @Output()
   durationChange = new EventEmitter<number>();
 
-  defaultDuration = DEFAULT_DURATION;
+  defaultDurationMinutes = DEFAULT_DURATION_SECONDS / 60;
 
   constructor() {}
 
-  onChange(event) {
-    this.durationChange.emit(+event.detail.value);
+  onChange(event): void {
+    this.durationChange.emit(event.detail.value * 60);
   }
 }

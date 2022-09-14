@@ -1,7 +1,7 @@
 <div class="modal" fxLayout="column" fxLayoutAlign="space-between center">
   <p class="title">Meditation</p>
 
-  <p class="time">{{ $currentTime | async }}</p>
+  <p class="time">{{ ($currentTime | async) * 1000 | date: 'mm:ss' }}</p>
 
   <div class="actions" fxLayout="column" fxLayoutAlign="flex-end center">
     <div class="actions__finish" *ngIf="($active | async) === false">

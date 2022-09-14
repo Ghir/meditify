@@ -5,4 +5,4 @@ export const timer = {
 
 export type TimerMenu = typeof timer[keyof typeof timer];
 
-export const DEFAULT_DURATION = 15;
+export const DEFAULT_DURATION_SECONDS = 900;

@@ -7,7 +7,7 @@ import { IonicModule, IonInput } from '@ionic/angular';
 import { TimerDurationComponent } from '@timer/components/timer-duration/timer-duration.component';
 
 // Constants
-import { DEFAULT_DURATION } from '@timer/models/timer.model';
+import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.model';
 
 describe('TimerDurationComponent', () => {
   let component: TimerDurationComponent;
@@ -33,7 +33,7 @@ describe('TimerDurationComponent', () => {
   it('should contain default duration', () => {
     const input = fixture.debugElement.query(By.directive(IonInput));
 
-    expect(input.nativeElement.value).toEqual(DEFAULT_DURATION);
+    expect(input.nativeElement.value).toEqual(DEFAULT_DURATION_SECONDS);
   });
 
   it('should emit input change event', (done: DoneFn) => {

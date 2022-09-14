@@ -6,7 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { TimerModalComponent } from '@timer/components/timer-modal/timer-modal.component';
 
 // Constants
-import { DEFAULT_DURATION } from '@timer/models/timer.model';
+import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.model';
 
 @Component({
   selector: 'app-timer',
@@ -24,7 +24,7 @@ export class TimerComponent {
   }
 
   async presentModal(): Promise<void> {
-    const duration = this.duration || DEFAULT_DURATION;
+    const duration = this.duration || DEFAULT_DURATION_SECONDS;
 
     const modal = await this.modalController.create({
       component: TimerModalComponent,
