@@ -12,8 +12,6 @@ import { TimerMenu } from '@timer/models/timer.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimerContainerComponent {
-  timer = timer;
-
   timerMenu: TimerMenu[] = [timer.timer, timer.stats];
   menuSelection: TimerMenu[] = [timer.timer];
 

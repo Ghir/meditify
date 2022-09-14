@@ -40,7 +40,14 @@
           }
         ],
         "@typescript-eslint/member-ordering": "off",
-        "@typescript-eslint/no-unused-expressions": "off"
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["UPPER_CASE", "PascalCase", "camelCase"]
+          }
+        ]
       }
     },
     {
