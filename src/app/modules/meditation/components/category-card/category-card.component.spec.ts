@@ -38,6 +38,6 @@ describe('CategoryCardComponent', () => {
       By.css('.card__name'),
     ).nativeElement;
 
-    expect(cardElement.textContent).toBe('Category Name');
+    expect(cardElement.textContent).toBe(categoryMock.name);
   });
 });

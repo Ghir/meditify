@@ -41,7 +41,7 @@ describe('MeditationsComponent', () => {
   const activatedRouteSpy = jasmine.createSpyObj('ActivatedRoute', [], {
     snapshot: {
       queryParams: {
-        categoryId: 'categoryId',
+        categoryId: 'focus',
       },
     },
   });

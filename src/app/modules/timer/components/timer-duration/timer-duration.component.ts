@@ -18,7 +18,7 @@ export class TimerDurationComponent {
   @Output()
   durationChange = new EventEmitter<number>();
 
-  defaultDurationMinutes = DEFAULT_DURATION_SECONDS / 60;
+  defaultDurationMinutes: number = DEFAULT_DURATION_SECONDS / 60;
 
   constructor() {}
 

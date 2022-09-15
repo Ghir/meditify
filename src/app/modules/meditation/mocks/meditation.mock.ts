@@ -2,7 +2,7 @@ import { Meditation } from '@meditation/models/meditation.model';
 
 export const meditationMock: Meditation = {
   id: 'id',
-  categoryId: 'categoryId',
+  categoryId: 'focus',
   title: 'Meditation title',
   text: `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo

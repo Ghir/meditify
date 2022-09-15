@@ -33,12 +33,12 @@ describe('TimerDurationComponent', () => {
   it('should contain default duration', () => {
     const input = fixture.debugElement.query(By.directive(IonInput));
 
-    expect(input.nativeElement.value).toEqual(DEFAULT_DURATION_SECONDS);
+    expect(input.nativeElement.value).toEqual(DEFAULT_DURATION_SECONDS / 60);
   });
 
   it('should emit input change event', (done: DoneFn) => {
     component.durationChange.subscribe((duration: number) => {
-      expect(duration).toEqual(1);
+      expect(duration).toEqual(60);
       done();
     });
 

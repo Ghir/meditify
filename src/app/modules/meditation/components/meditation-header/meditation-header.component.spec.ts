@@ -38,7 +38,7 @@ describe('MeditationHeaderComponent', () => {
       By.css('.header__title'),
     ).nativeElement;
 
-    expect(titleElement.textContent).toBe('Category Name');
+    expect(titleElement.textContent).toBe(categoryMock.name);
   });
 
   it('should show category description', () => {
@@ -49,6 +49,6 @@ describe('MeditationHeaderComponent', () => {
       By.css('.header__description'),
     ).nativeElement;
 
-    expect(titleElement.textContent).toBe('Category Description');
+    expect(titleElement.textContent).toBe(categoryMock.description);
   });
 });

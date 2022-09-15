@@ -38,7 +38,7 @@ describe('TimerComponent', () => {
     const input = fixture.debugElement.query(By.directive(IonInput));
     input.triggerEventHandler('ionChange', { detail: { value: 1 } });
 
-    expect(component.duration).toBe(1);
+    expect(component.duration).toBe(60);
   });
 
   it('should display modal', () => {
@@ -50,7 +50,7 @@ describe('TimerComponent', () => {
 
     expect(modalControllerSpy.create).toHaveBeenCalledWith({
       component: TimerModalComponent,
-      componentProps: { duration: 15 },
+      componentProps: { duration: 900 },
     });
   });
 });

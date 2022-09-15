@@ -18,6 +18,7 @@ export class TimerContainerComponent {
   constructor(private router: Router) {}
 
   onMenuSelectionChange(selection: TimerMenu) {
+    this.menuSelection = [selection];
     this.router.navigate(['timer', selection]);
   }
 }

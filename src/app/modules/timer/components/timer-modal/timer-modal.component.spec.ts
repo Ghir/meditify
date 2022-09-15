@@ -61,11 +61,11 @@ describe('TimerModalComponent', () => {
   }));
 
   it('should display time', fakeAsync(() => {
-    component.duration = 3;
+    component.duration = 120;
     fixture.detectChanges();
 
     const timeElement = fixture.debugElement.query(By.css('.time'));
-    expect(timeElement.nativeElement.textContent).toBe('3');
+    expect(timeElement.nativeElement.textContent).toBe('02:00');
 
     discardPeriodicTasks();
   }));
