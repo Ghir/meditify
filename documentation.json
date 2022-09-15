@@ -2482,7 +2482,7 @@
     },
     {
       "name": "TimerContainerComponent",
-      "id": "component-TimerContainerComponent-921205abb2d74a00bf66ef68233dc7f6",
+      "id": "component-TimerContainerComponent-f03770a8986c542a7a2aa03adb8d78d8",
       "file": "src/app/modules/timer/pages/timer-container/timer-container.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -2506,17 +2506,7 @@
           "type": "TimerMenu[]",
           "optional": false,
           "description": "",
-          "line": 18
-        },
-        {
-          "name": "timer",
-          "defaultValue": "timer",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "",
-          "optional": false,
-          "description": "",
-          "line": 15
+          "line": 16
         },
         {
           "name": "timerMenu",
@@ -2526,7 +2516,7 @@
           "type": "TimerMenu[]",
           "optional": false,
           "description": "",
-          "line": 17
+          "line": 15
         }
       ],
       "methodsClass": [
@@ -2543,7 +2533,7 @@
           "optional": false,
           "returnType": "void",
           "typeParameters": [],
-          "line": 22,
+          "line": 20,
           "deprecated": false,
           "deprecationMessage": "",
           "jsdoctags": [
@@ -2566,7 +2556,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Models\nimport { timer } from '@timer/models/timer.model';\nimport { TimerMenu } from '@timer/models/timer.model';\n\n@Component({\n  selector: 'app-timer-container',\n  templateUrl: './timer-container.component.html',\n  styleUrls: ['./timer-container.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TimerContainerComponent {\n  timer = timer;\n\n  timerMenu: TimerMenu[] = [timer.timer, timer.stats];\n  menuSelection: TimerMenu[] = [timer.timer];\n\n  constructor(private router: Router) {}\n\n  onMenuSelectionChange(selection: TimerMenu) {\n    this.router.navigate(['timer', selection]);\n  }\n}\n",
+      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Models\nimport { timer } from '@timer/models/timer.model';\nimport { TimerMenu } from '@timer/models/timer.model';\n\n@Component({\n  selector: 'app-timer-container',\n  templateUrl: './timer-container.component.html',\n  styleUrls: ['./timer-container.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TimerContainerComponent {\n  timerMenu: TimerMenu[] = [timer.timer, timer.stats];\n  menuSelection: TimerMenu[] = [timer.timer];\n\n  constructor(private router: Router) {}\n\n  onMenuSelectionChange(selection: TimerMenu) {\n    this.router.navigate(['timer', selection]);\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -2588,7 +2578,7 @@
             "deprecationMessage": ""
           }
         ],
-        "line": 18,
+        "line": 16,
         "jsdoctags": [
           {
             "name": "router",
@@ -5492,7 +5482,7 @@
         "linktype": "component",
         "name": "TimerContainerComponent",
         "coveragePercent": 0,
-        "coverageCount": "0/6",
+        "coverageCount": "0/5",
         "status": "low"
       },
       {
