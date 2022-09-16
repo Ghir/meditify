@@ -53,7 +53,7 @@ const template: Story<MeditationModalComponent> = (args) => ({
   props: args,
 });
 
-export const meditationModal = template.bind({});
-meditationModal.args = {
+export const MeditationModal = template.bind({});
+MeditationModal.args = {
   meditation: meditationMock,
 };

@@ -2482,7 +2482,7 @@
     },
     {
       "name": "TimerContainerComponent",
-      "id": "component-TimerContainerComponent-f03770a8986c542a7a2aa03adb8d78d8",
+      "id": "component-TimerContainerComponent-7a66a4fe8f185a590702016c18cbe02c",
       "file": "src/app/modules/timer/pages/timer-container/timer-container.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -2556,7 +2556,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Models\nimport { timer } from '@timer/models/timer.model';\nimport { TimerMenu } from '@timer/models/timer.model';\n\n@Component({\n  selector: 'app-timer-container',\n  templateUrl: './timer-container.component.html',\n  styleUrls: ['./timer-container.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TimerContainerComponent {\n  timerMenu: TimerMenu[] = [timer.timer, timer.stats];\n  menuSelection: TimerMenu[] = [timer.timer];\n\n  constructor(private router: Router) {}\n\n  onMenuSelectionChange(selection: TimerMenu) {\n    this.router.navigate(['timer', selection]);\n  }\n}\n",
+      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Models\nimport { timer } from '@timer/models/timer.model';\nimport { TimerMenu } from '@timer/models/timer.model';\n\n@Component({\n  selector: 'app-timer-container',\n  templateUrl: './timer-container.component.html',\n  styleUrls: ['./timer-container.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TimerContainerComponent {\n  timerMenu: TimerMenu[] = [timer.timer, timer.stats];\n  menuSelection: TimerMenu[] = [timer.timer];\n\n  constructor(private router: Router) {}\n\n  onMenuSelectionChange(selection: TimerMenu) {\n    this.menuSelection = [selection];\n    this.router.navigate(['timer', selection]);\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -2595,7 +2595,7 @@
     },
     {
       "name": "TimerDurationComponent",
-      "id": "component-TimerDurationComponent-bb7e636ffafb8207544d2cbce1da5e03",
+      "id": "component-TimerDurationComponent-6d760e9e3c8245271e82445bfb901a55",
       "file": "src/app/modules/timer/components/timer-duration/timer-duration.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -2625,7 +2625,7 @@
           "defaultValue": "DEFAULT_DURATION_SECONDS / 60",
           "deprecated": false,
           "deprecationMessage": "",
-          "type": "",
+          "type": "number",
           "optional": false,
           "description": "",
           "line": 21
@@ -2668,7 +2668,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Output,\n} from '@angular/core';\n\n// Constants\nimport { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.model';\n\n@Component({\n  selector: 'app-timer-duration',\n  templateUrl: './timer-duration.component.html',\n  styleUrls: ['./timer-duration.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TimerDurationComponent {\n  @Output()\n  durationChange = new EventEmitter<number>();\n\n  defaultDurationMinutes = DEFAULT_DURATION_SECONDS / 60;\n\n  constructor() {}\n\n  onChange(event): void {\n    this.durationChange.emit(event.detail.value * 60);\n  }\n}\n",
+      "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  EventEmitter,\n  Output,\n} from '@angular/core';\n\n// Constants\nimport { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.model';\n\n@Component({\n  selector: 'app-timer-duration',\n  templateUrl: './timer-duration.component.html',\n  styleUrls: ['./timer-duration.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class TimerDurationComponent {\n  @Output()\n  durationChange = new EventEmitter<number>();\n\n  defaultDurationMinutes: number = DEFAULT_DURATION_SECONDS / 60;\n\n  constructor() {}\n\n  onChange(event): void {\n    this.durationChange.emit(event.detail.value * 60);\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -3310,7 +3310,7 @@
         "deprecated": false,
         "deprecationMessage": "",
         "type": "Category",
-        "defaultValue": "{\n  id: 'categoryId',\n  name: 'Category Name',\n  description: 'Category Description',\n  imageUrl: 'http://domain.com',\n}"
+        "defaultValue": "{\n  id: 'focus',\n  name: 'Focus',\n  description:\n    'Cultivate awareness of your experience in the present moment, living each moment as fully as possible.',\n  imageUrl:\n    'https://firebasestorage.googleapis.com/v0/b/meditify-5cd18.appspot.com/o/lotus.png?alt=media&token=5da4dbf0-a26f-40fb-a733-1593d229c030',\n}"
       },
       {
         "name": "content",
@@ -3396,21 +3396,21 @@
         "name": "initialState",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/home/store/reducers/home.reducer.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "HomeState",
-        "defaultValue": "{\n  // data\n  quote: null,\n  // state\n  isQuoteLoading: false,\n  isQuoteLoaded: false,\n  isQuoteError: false,\n}"
-      },
-      {
-        "name": "initialState",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
         "type": "MeditationState",
         "defaultValue": "{\n  // data\n  meditations: null,\n  categories: null,\n  // state\n  isCategoriesLoading: false,\n  isCategoriesLoaded: false,\n  isCategoriesError: false,\n  isMeditationsLoading: false,\n  isMeditationsLoaded: false,\n  isMeditationsError: false,\n}"
+      },
+      {
+        "name": "initialState",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/modules/home/store/reducers/home.reducer.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "HomeState",
+        "defaultValue": "{\n  // data\n  quote: null,\n  // state\n  isQuoteLoading: false,\n  isQuoteLoaded: false,\n  isQuoteError: false,\n}"
       },
       {
         "name": "loadCategories",
@@ -3520,7 +3520,7 @@
         "deprecated": false,
         "deprecationMessage": "",
         "type": "Meditation",
-        "defaultValue": "{\n  id: 'id',\n  categoryId: 'categoryId',\n  title: 'Meditation title',\n  text: `\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo\n  r incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis \n  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s\n  unt in culpa qui officia deserunt mollit anim id est laborum.\n  `,\n  media: 'https://domain.com',\n  imageUrl: 'https://picsum.photos/seed/picsum/400/600',\n}"
+        "defaultValue": "{\n  id: 'id',\n  categoryId: 'focus',\n  title: 'Meditation title',\n  text: `\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo\n  r incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis \n  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s\n  unt in culpa qui officia deserunt mollit anim id est laborum.\n  `,\n  media: 'https://domain.com',\n  imageUrl: 'https://picsum.photos/seed/picsum/400/600',\n}"
       },
       {
         "name": "meditationReducer",
@@ -3626,16 +3626,6 @@
         "name": "reducer",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/home/store/reducers/home.reducer.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "",
-        "defaultValue": "(state: HomeState | undefined, action: Action) =>\n  homeReducer(state, action)"
-      },
-      {
-        "name": "reducer",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
@@ -3643,14 +3633,14 @@
         "defaultValue": "(state: MeditationState | undefined, action: Action) =>\n  meditationReducer(state, action)"
       },
       {
-        "name": "reducers",
+        "name": "reducer",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/home/store/reducers/home.state.ts",
+        "file": "src/app/modules/home/store/reducers/home.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
-        "type": "object",
-        "defaultValue": "{\n  home: reducer,\n}"
+        "type": "",
+        "defaultValue": "(state: HomeState | undefined, action: Action) =>\n  homeReducer(state, action)"
       },
       {
         "name": "reducers",
@@ -3661,6 +3651,16 @@
         "deprecationMessage": "",
         "type": "object",
         "defaultValue": "{\n  meditation: reducer,\n}"
+      },
+      {
+        "name": "reducers",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/modules/home/store/reducers/home.state.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\n  home: reducer,\n}"
       },
       {
         "name": "selectCategories",
@@ -4001,7 +4001,7 @@
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Category",
-          "defaultValue": "{\n  id: 'categoryId',\n  name: 'Category Name',\n  description: 'Category Description',\n  imageUrl: 'http://domain.com',\n}"
+          "defaultValue": "{\n  id: 'focus',\n  name: 'Focus',\n  description:\n    'Cultivate awareness of your experience in the present moment, living each moment as fully as possible.',\n  imageUrl:\n    'https://firebasestorage.googleapis.com/v0/b/meditify-5cd18.appspot.com/o/lotus.png?alt=media&token=5da4dbf0-a26f-40fb-a733-1593d229c030',\n}"
         }
       ],
       "src/app/modules/meditation/models/meditation.model.ts": [
@@ -4325,7 +4325,7 @@
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Meditation",
-          "defaultValue": "{\n  id: 'id',\n  categoryId: 'categoryId',\n  title: 'Meditation title',\n  text: `\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo\n  r incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis \n  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s\n  unt in culpa qui officia deserunt mollit anim id est laborum.\n  `,\n  media: 'https://domain.com',\n  imageUrl: 'https://picsum.photos/seed/picsum/400/600',\n}"
+          "defaultValue": "{\n  id: 'id',\n  categoryId: 'focus',\n  title: 'Meditation title',\n  text: `\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo\n  r incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis \n  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore\n  eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, s\n  unt in culpa qui officia deserunt mollit anim id est laborum.\n  `,\n  media: 'https://domain.com',\n  imageUrl: 'https://picsum.photos/seed/picsum/400/600',\n}"
         }
       ],
       "src/app/modules/home/mocks/quote.mock.ts": [

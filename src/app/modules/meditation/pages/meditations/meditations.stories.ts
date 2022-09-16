@@ -45,7 +45,7 @@ export default {
         ModalController,
         {
           provide: ActivatedRoute,
-          useValue: { snapshot: { queryParams: { categoryId: 'categoryId' } } },
+          useValue: { snapshot: { queryParams: { categoryId: 'focus' } } },
         },
         provideMockStore({
           initialState: {
@@ -69,4 +69,4 @@ const template: Story<MeditationsComponent> = (args) => ({
   props: args,
 });
 
-export const meditations = template.bind({});
+export const Meditations = template.bind({});

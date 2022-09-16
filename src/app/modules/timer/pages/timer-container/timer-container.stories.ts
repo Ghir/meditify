@@ -17,9 +17,26 @@ import { TimerContainerComponent } from '@timer/pages/timer-container/timer-cont
 // Modules
 import { ButtonsSelectModule } from '@buttons-select/buttons-select.module';
 
+// Models
+import { timer } from '@timer/models/timer.model';
+
 export default {
   component: TimerContainerComponent,
   title: 'Timer/ Timer Container',
+  argTypes: {
+    menuSelection: {
+      defaultValue: [timer.timer],
+      control: {
+        type: 'array',
+      },
+    },
+    timerMenu: {
+      defaultValue: [timer.timer, timer.stats],
+      control: {
+        type: 'array',
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       declarations: [TimerContainerComponent],
@@ -31,7 +48,7 @@ export default {
       ],
     }),
     componentWrapperDecorator(
-      (story) => `<div style="height: 650px">${story}</div>`,
+      (story) => `<div style="height: calc(100vh - 56px)">${story}</div>`,
     ),
   ],
 } as Meta;

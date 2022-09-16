@@ -24,7 +24,7 @@ export default {
       imports: [CommonModule, FlexLayoutModule, IonicModule.forRoot()],
     }),
     componentWrapperDecorator(
-      (story) => `<div style="height: 650px">${story}</div>`,
+      (story) => `<div style="height: calc(100vh - 56px)">${story}</div>`,
     ),
   ],
 } as Meta;
@@ -36,6 +36,7 @@ const template: Story<TimerComponent> = (args) => ({
 export const Timer = template.bind({});
 
 Timer.args = {
+  layout: 'fullscreen',
   onDurationChange: action('duration changed'),
   presentModal: action('open modal'),
 };

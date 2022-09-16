@@ -36,9 +36,9 @@ const template: Story<MediaContentComponent> = (args) => ({
   props: args,
 });
 
-export const mediaContent = template.bind({});
+export const MediaContent = template.bind({});
 
-mediaContent.args = {
+MediaContent.args = {
   meditation: meditationMock,
   seekbarValue: 0,
   media: INITIAL_MEDIA_STATE,

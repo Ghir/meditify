@@ -34,8 +34,8 @@ const template: Story<CategoryCardComponent> = (args) => ({
   props: args,
 });
 
-export const categoryCard = template.bind({});
+export const CategoryCard = template.bind({});
 
-categoryCard.args = {
+CategoryCard.args = {
   category: categoryMock,
 };

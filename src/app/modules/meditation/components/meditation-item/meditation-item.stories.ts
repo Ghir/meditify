@@ -27,9 +27,9 @@ const template: Story<MeditationItemComponent> = (args) => ({
   props: args,
 });
 
-export const meditationItem = template.bind({});
+export const MeditationItem = template.bind({});
 
-meditationItem.args = {
+MeditationItem.args = {
   meditation: meditationMock,
   selected: action('selected'),
 };

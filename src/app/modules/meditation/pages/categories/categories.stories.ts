@@ -48,4 +48,4 @@ const template: Story<CategoriesComponent> = (args) => ({
   props: args,
 });
 
-export const categories = template.bind({});
+export const Categories = template.bind({});

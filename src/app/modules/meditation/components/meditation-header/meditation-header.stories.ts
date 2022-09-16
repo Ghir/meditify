@@ -34,8 +34,8 @@ const template: Story<MeditationHeaderComponent> = (args) => ({
   props: args,
 });
 
-export const meditationHeader = template.bind({});
+export const MeditationHeader = template.bind({});
 
-meditationHeader.args = {
+MeditationHeader.args = {
   category: categoryMock,
 };

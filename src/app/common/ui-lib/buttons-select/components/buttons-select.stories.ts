@@ -36,9 +36,9 @@ const template: Story<ButtonsSelectComponent> = (args) => ({
   props: args,
 });
 
-export const buttonsSelect = template.bind({});
+export const ButtonsSelect = template.bind({});
 
-buttonsSelect.args = {
+ButtonsSelect.args = {
   valueChange: action('value changed'),
   options: [content.media, content.text],
   value: [content.media],

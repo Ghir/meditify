@@ -12,9 +12,9 @@ const template: Story<TextContentComponent> = (args) => ({
   props: args,
 });
 
-export const textContent = template.bind({});
+export const TextContent = template.bind({});
 
-textContent.args = {
+TextContent.args = {
   text: `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo
   r incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 

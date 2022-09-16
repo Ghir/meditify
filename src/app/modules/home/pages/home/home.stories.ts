@@ -3,7 +3,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { IonContent, IonicModule } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
 import {
   componentWrapperDecorator,
@@ -17,10 +17,9 @@ import { HomeComponent } from '@home/pages/home/home.component';
 
 export default {
   component: HomeComponent,
-  title: 'Home/Home Component',
+  title: 'Home/ Home',
   decorators: [
     moduleMetadata({
-      declarations: [HomeComponent],
       imports: [CommonModule, FlexLayoutModule, IonicModule.forRoot()],
       providers: [
         provideMockStore({
@@ -36,7 +35,7 @@ export default {
       ],
     }),
     componentWrapperDecorator(
-      (story) => `<div style="height: 750px">${story}</div>`,
+      (story) => `<div style="height: calc(100vh - 56px)">${story}</div>`,
     ),
   ],
 } as Meta;
@@ -45,7 +44,8 @@ const template: Story<HomeComponent> = (args) => ({
   props: args,
 });
 
-export const homeComponent = template.bind({});
-homeComponent.parameters = {
+export const Home = template.bind({});
+Home.parameters = {
+  layout: 'fullscreen',
   controls: { hideNoControlsWarning: true },
 };
