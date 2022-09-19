@@ -25,9 +25,26 @@ import { AudioStateService } from '@meditation/services/audio-state.service';
 // Mocks
 import { meditationMock } from '@meditation/mocks/meditation.mock';
 
+// Models
+import { content } from '@meditation/models/meditation.model';
+
 export default {
   component: MeditationModalComponent,
   title: 'Meditation/Meditation Modal',
+  argTypes: {
+    mediaSelection: {
+      defaultValue: [content.media],
+      control: {
+        type: 'array',
+      },
+    },
+    mediaOptions: {
+      defaultValue: [content.media, content.text],
+      control: {
+        type: 'array',
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       declarations: [

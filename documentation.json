@@ -1345,7 +1345,7 @@
     },
     {
       "name": "CategoriesComponent",
-      "id": "component-CategoriesComponent-663bcb7a825db5495d3d0a92cbddc0fc",
+      "id": "component-CategoriesComponent-b333e5eed46732d1a69601a7385e4c0d",
       "file": "src/app/modules/meditation/pages/categories/categories.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -1363,13 +1363,13 @@
       "propertiesClass": [
         {
           "name": "$categories",
-          "defaultValue": "this.store.select(selectCategories)",
+          "defaultValue": "this.store.select<Category[]>(selectCategories)",
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Observable<Category[]>",
           "optional": false,
           "description": "",
-          "line": 20
+          "line": 19
         }
       ],
       "methodsClass": [],
@@ -1380,7 +1380,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { Observable } from 'rxjs';\n\nimport { Store } from '@ngrx/store';\n\n// Models\nimport { Category } from '@meditation/models/category.model';\n\n// Selectors\nimport { selectCategories } from '@meditation/store/selectors/meditation.selector';\n\n@Component({\n  selector: 'app-categories',\n  templateUrl: './categories.component.html',\n  styleUrls: ['./categories.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class CategoriesComponent {\n  $categories: Observable<Category[]> = this.store.select(selectCategories);\n\n  constructor(private store: Store) {}\n}\n",
+      "sourceCode": "import { Observable } from 'rxjs';\nimport { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { Store } from '@ngrx/store';\n\n// Models\nimport { Category } from '@meditation/models/category.model';\n\n// Selectors\nimport { selectCategories } from '@meditation/store/selectors/meditation.selector';\n\n@Component({\n  selector: 'app-categories',\n  templateUrl: './categories.component.html',\n  styleUrls: ['./categories.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class CategoriesComponent {\n  $categories: Observable<Category[]> =\n    this.store.select<Category[]>(selectCategories);\n\n  constructor(private store: Store) {}\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {

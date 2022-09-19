@@ -1,3 +1,4 @@
+import { of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -21,6 +22,14 @@ import { categoryMock } from '@meditation/mocks/category.mock';
 
 export default {
   component: CategoriesComponent,
+  argTypes: {
+    $categories: {
+      defaultValue: of([categoryMock, categoryMock]),
+      table: {
+        disable: true,
+      },
+    },
+  },
   title: 'Meditation/Categories',
   decorators: [
     moduleMetadata({
@@ -39,7 +48,7 @@ export default {
       ],
     }),
     componentWrapperDecorator(
-      (story) => `<div style="height: 650px">${story}</div>`,
+      (story) => `<div style="height: calc(100vh - 110px)">${story}</div>`,
     ),
   ],
 } as Meta;
@@ -49,3 +58,6 @@ const template: Story<CategoriesComponent> = (args) => ({
 });
 
 export const Categories = template.bind({});
+Categories.parameters = {
+  layout: 'fullscreen',
+};

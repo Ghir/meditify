@@ -6,6 +6,8 @@ import { provideMockStore } from '@ngrx/store/testing';
 
 import { IonicModule, ModalController } from '@ionic/angular';
 
+import { BehaviorSubject } from 'rxjs';
+
 import {
   componentWrapperDecorator,
   Meta,
@@ -25,9 +27,29 @@ import { ButtonsSelectModule } from '@buttons-select/buttons-select.module';
 import { meditationMock } from '@meditation/mocks/meditation.mock';
 import { categoryMock } from '@meditation/mocks/category.mock';
 
+// Models
+import { content } from '@meditation/models/meditation.model';
+
 export default {
   component: MeditationsComponent,
   title: 'Meditation/Meditations',
+  argTypes: {
+    $mediaSelection: {
+      table: {
+        disable: true,
+      },
+      defaultValue: new BehaviorSubject([]),
+      control: {
+        type: 'object',
+      },
+    },
+    mediaOptions: {
+      defaultValue: [content.media, content.text],
+      control: {
+        type: 'array',
+      },
+    },
+  },
   decorators: [
     moduleMetadata({
       declarations: [
