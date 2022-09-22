@@ -1345,7 +1345,7 @@
     },
     {
       "name": "CategoriesComponent",
-      "id": "component-CategoriesComponent-b333e5eed46732d1a69601a7385e4c0d",
+      "id": "component-CategoriesComponent-663bcb7a825db5495d3d0a92cbddc0fc",
       "file": "src/app/modules/meditation/pages/categories/categories.component.ts",
       "changeDetection": "ChangeDetectionStrategy.OnPush",
       "encapsulation": [],
@@ -1363,13 +1363,13 @@
       "propertiesClass": [
         {
           "name": "$categories",
-          "defaultValue": "this.store.select<Category[]>(selectCategories)",
+          "defaultValue": "this.store.select(selectCategories)",
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Observable<Category[]>",
           "optional": false,
           "description": "",
-          "line": 19
+          "line": 20
         }
       ],
       "methodsClass": [],
@@ -1380,7 +1380,7 @@
       "description": "",
       "rawdescription": "\n",
       "type": "component",
-      "sourceCode": "import { Observable } from 'rxjs';\nimport { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { Store } from '@ngrx/store';\n\n// Models\nimport { Category } from '@meditation/models/category.model';\n\n// Selectors\nimport { selectCategories } from '@meditation/store/selectors/meditation.selector';\n\n@Component({\n  selector: 'app-categories',\n  templateUrl: './categories.component.html',\n  styleUrls: ['./categories.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class CategoriesComponent {\n  $categories: Observable<Category[]> =\n    this.store.select<Category[]>(selectCategories);\n\n  constructor(private store: Store) {}\n}\n",
+      "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { Observable } from 'rxjs';\n\nimport { Store } from '@ngrx/store';\n\n// Models\nimport { Category } from '@meditation/models/category.model';\n\n// Selectors\nimport { selectCategories } from '@meditation/store/selectors/meditation.selector';\n\n@Component({\n  selector: 'app-categories',\n  templateUrl: './categories.component.html',\n  styleUrls: ['./categories.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class CategoriesComponent {\n  $categories: Observable<Category[]> = this.store.select(selectCategories);\n\n  constructor(private store: Store) {}\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -3396,21 +3396,21 @@
         "name": "initialState",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "MeditationState",
-        "defaultValue": "{\n  // data\n  meditations: null,\n  categories: null,\n  // state\n  isCategoriesLoading: false,\n  isCategoriesLoaded: false,\n  isCategoriesError: false,\n  isMeditationsLoading: false,\n  isMeditationsLoaded: false,\n  isMeditationsError: false,\n}"
-      },
-      {
-        "name": "initialState",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/app/modules/home/store/reducers/home.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
         "type": "HomeState",
         "defaultValue": "{\n  // data\n  quote: null,\n  // state\n  isQuoteLoading: false,\n  isQuoteLoaded: false,\n  isQuoteError: false,\n}"
+      },
+      {
+        "name": "initialState",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "MeditationState",
+        "defaultValue": "{\n  // data\n  meditations: null,\n  categories: null,\n  // state\n  isCategoriesLoading: false,\n  isCategoriesLoaded: false,\n  isCategoriesError: false,\n  isMeditationsLoading: false,\n  isMeditationsLoaded: false,\n  isMeditationsError: false,\n}"
       },
       {
         "name": "loadCategories",
@@ -3626,16 +3626,6 @@
         "name": "reducer",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "",
-        "defaultValue": "(state: MeditationState | undefined, action: Action) =>\n  meditationReducer(state, action)"
-      },
-      {
-        "name": "reducer",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
         "file": "src/app/modules/home/store/reducers/home.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
@@ -3643,14 +3633,14 @@
         "defaultValue": "(state: HomeState | undefined, action: Action) =>\n  homeReducer(state, action)"
       },
       {
-        "name": "reducers",
+        "name": "reducer",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/app/modules/meditation/store/reducers/meditation.state.ts",
+        "file": "src/app/modules/meditation/store/reducers/meditation.reducer.ts",
         "deprecated": false,
         "deprecationMessage": "",
-        "type": "object",
-        "defaultValue": "{\n  meditation: reducer,\n}"
+        "type": "",
+        "defaultValue": "(state: MeditationState | undefined, action: Action) =>\n  meditationReducer(state, action)"
       },
       {
         "name": "reducers",
@@ -3661,6 +3651,16 @@
         "deprecationMessage": "",
         "type": "object",
         "defaultValue": "{\n  home: reducer,\n}"
+      },
+      {
+        "name": "reducers",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/modules/meditation/store/reducers/meditation.state.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "object",
+        "defaultValue": "{\n  meditation: reducer,\n}"
       },
       {
         "name": "selectCategories",

@@ -6,7 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { TimerModalComponent } from '@timer/components/timer-modal/timer-modal.component';
 
 // Constants
-import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.model';
+import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.constants';
 
 @Component({
   selector: 'app-timer',

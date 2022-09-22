@@ -17,21 +17,24 @@ import { TimerContainerComponent } from '@timer/pages/timer-container/timer-cont
 // Modules
 import { ButtonsSelectModule } from '@buttons-select/buttons-select.module';
 
-// Models
-import { timer } from '@timer/models/timer.model';
+// Utils
+import { RoutesUtils } from '@router/routes.utils';
 
 export default {
   component: TimerContainerComponent,
   title: 'Timer/ Timer Container',
   argTypes: {
     menuSelection: {
-      defaultValue: [timer.timer],
+      defaultValue: [RoutesUtils.TIMER_ROUTES.play],
       control: {
         type: 'array',
       },
     },
     timerMenu: {
-      defaultValue: [timer.timer, timer.stats],
+      defaultValue: [
+        RoutesUtils.TIMER_ROUTES.play,
+        RoutesUtils.TIMER_ROUTES.stats,
+      ],
       control: {
         type: 'array',
       },

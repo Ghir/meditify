@@ -2,8 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Models
-import { timer } from '@timer/models/timer.model';
-import { TimerMenu } from '@timer/models/timer.model';
+import { TimerRoutesTypes } from '@router/routes.model';
+
+// Utils
+import { RoutesUtils } from '@router/routes.utils';
 
 @Component({
   selector: 'app-timer-container',
@@ -12,13 +14,16 @@ import { TimerMenu } from '@timer/models/timer.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimerContainerComponent {
-  timerMenu: TimerMenu[] = [timer.timer, timer.stats];
-  menuSelection: TimerMenu[] = [timer.timer];
+  timerMenu: TimerRoutesTypes[] = [
+    RoutesUtils.TIMER_ROUTES.play,
+    RoutesUtils.TIMER_ROUTES.stats,
+  ];
+  menuSelection: TimerRoutesTypes[] = [RoutesUtils.TIMER_ROUTES.play];
 
   constructor(private router: Router) {}
 
-  onMenuSelectionChange(selection: TimerMenu) {
+  onMenuSelectionChange(selection: TimerRoutesTypes) {
     this.menuSelection = [selection];
-    this.router.navigate(['timer', selection]);
+    this.router.navigate([`${RoutesUtils.TOP_ROUTES.timer + selection}`]);
   }
 }

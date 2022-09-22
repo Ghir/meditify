@@ -9,7 +9,7 @@ import { IonButton, IonicModule } from '@ionic/angular';
 import { ButtonsSelectComponent } from '@buttons-select/components/buttons-select.component';
 import { TimerContainerComponent } from '@timer/pages/timer-container/timer-container.component';
 
-describe('TimerComponent', () => {
+describe('TimerContainerComponent', () => {
   let component: TimerContainerComponent;
   let fixture: ComponentFixture<TimerContainerComponent>;
   let router: Router;
@@ -38,7 +38,7 @@ describe('TimerComponent', () => {
     const button = fixture.debugElement.queryAll(By.directive(IonButton))[0];
     button.nativeElement.click();
 
-    expect(navigateSpy).toHaveBeenCalledWith(['timer', 'play']);
+    expect(navigateSpy).toHaveBeenCalledWith(['timer/play']);
   });
 
   it('should navigate to stats', () => {
@@ -47,6 +47,6 @@ describe('TimerComponent', () => {
     const button = fixture.debugElement.queryAll(By.directive(IonButton))[1];
     button.nativeElement.click();
 
-    expect(navigateSpy).toHaveBeenCalledWith(['timer', 'stats']);
+    expect(navigateSpy).toHaveBeenCalledWith(['timer/stats']);
   });
 });

@@ -18,7 +18,8 @@
       "@home/*": ["app/modules/home/*"],
       "@meditation/*": ["app/modules/meditation/*"],
       "@timer/*": ["app/modules/timer/*"],
-      "@buttons-select/*": ["app/common/ui-lib/buttons-select/*"]
+      "@buttons-select/*": ["app/common/ui-lib/buttons-select/*"],
+      "@router/*": ["app/core/router/*"]
     },
     "allowSyntheticDefaultImports": true
   },
