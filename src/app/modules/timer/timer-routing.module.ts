@@ -6,6 +6,9 @@ import { TimerContainerComponent } from '@timer/pages/timer-container/timer-cont
 import { StatsComponent } from '@timer/pages/stats/stats.component';
 import { TimerComponent } from '@timer/pages/timer/timer.component';
 
+// Guards
+import { SessionsGuard } from '@timer/guards/sessions.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +26,7 @@ const routes: Routes = [
       {
         path: 'stats',
         component: StatsComponent,
+        canActivate: [SessionsGuard],
       },
     ],
   },
