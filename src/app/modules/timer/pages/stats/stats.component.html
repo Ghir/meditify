@@ -1,1 +1,13 @@
-<p>stats works!</p>
+<ion-content forceOverscroll>
+  <ion-list lines="full">
+    <ion-item *ngFor="let session of $sessions | async">
+      <div class="item" fxLayout="column" fxLayoutGap="10px">
+        <span class="item__date">{{ session.date | date: 'short' }}</span>
+        <span class="item__duration">
+          {{ session.duration * 1000 | date: 'mm' }} minutes
+          {{ session.duration % 60 }} seconds
+        </span>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
