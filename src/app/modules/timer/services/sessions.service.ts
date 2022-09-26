@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
+  DocumentReference,
   QuerySnapshot,
 } from '@angular/fire/compat/firestore';
 
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 // Models
@@ -23,5 +24,9 @@ export class SessionsService {
           snapshot.docs.map((doc) => doc.data()),
         ),
       );
+  }
+
+  createSession(session: Session): Observable<DocumentReference<Session>> {
+    return from(this.firestore.collection<Session>('sessions').add(session));
   }
 }

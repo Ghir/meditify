@@ -29,6 +29,7 @@ import { reducers, timerFeatureKey } from '@timer/store/reducers/timer.state';
 
 // Effects
 import { SessionsLoadEffect } from '@timer/store/effects/sessions-load.effect';
+import { SessionCreateEffect } from '@timer/store/effects/session-create.effect';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { SessionsLoadEffect } from '@timer/store/effects/sessions-load.effect';
     FlexLayoutModule,
     // store
     StoreModule.forFeature(timerFeatureKey, reducers),
-    EffectsModule.forFeature([SessionsLoadEffect]),
+    EffectsModule.forFeature([SessionsLoadEffect, SessionCreateEffect]),
   ],
   providers: [SessionsGuard, SessionsService],
 })

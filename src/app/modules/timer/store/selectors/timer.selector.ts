@@ -8,6 +8,9 @@ import {
 
 // Reducers
 import {
+  creationErrorState,
+  creationLoadedState,
+  creationLoadingState,
   sessionsErrorState,
   sessionsLoadedState,
   sessionsLoadingState,
@@ -37,4 +40,19 @@ export const selectIsSessionsLoading = createSelector(
 export const selectSessionsHasError = createSelector(
   selectTimerState,
   sessionsErrorState,
+);
+
+export const selectIsCreationDone = createSelector(
+  selectTimerState,
+  creationLoadedState,
+);
+
+export const selectIsCreationInProgress = createSelector(
+  selectTimerState,
+  creationLoadingState,
+);
+
+export const selectCreationHasError = createSelector(
+  selectTimerState,
+  creationErrorState,
 );

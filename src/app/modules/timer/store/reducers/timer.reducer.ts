@@ -5,6 +5,9 @@ import { Session } from '@timer/models/session.model';
 
 // Actions
 import {
+  createSession,
+  createSessionFailure,
+  createSessionSuccess,
   loadSessions,
   loadSessionsFailure,
   loadSessionsSuccess,
@@ -17,6 +20,9 @@ export interface TimerState {
   isSessionsLoading: boolean;
   isSessionsLoaded: boolean;
   isSessionsError: boolean;
+  isCreationInProgress: boolean;
+  isCreationDone: boolean;
+  isCreationError: boolean;
 }
 
 export const initialState: TimerState = {
@@ -26,6 +32,9 @@ export const initialState: TimerState = {
   isSessionsLoading: false,
   isSessionsLoaded: false,
   isSessionsError: false,
+  isCreationInProgress: false,
+  isCreationDone: false,
+  isCreationError: false,
 };
 
 const timerReducer = createReducer(
@@ -61,6 +70,27 @@ const timerReducer = createReducer(
       isSessionsError: false,
     }),
   ),
+
+  on(createSession, (state) => ({
+    ...state,
+    isCreationInProgress: true,
+    isCreationDone: false,
+    isCreationError: false,
+  })),
+
+  on(createSessionFailure, (state) => ({
+    ...state,
+    isCreationInProgress: false,
+    isCreationDone: true,
+    isCreationError: true,
+  })),
+
+  on(createSessionSuccess, (state) => ({
+    ...state,
+    isCreationInProgress: false,
+    isCreationDone: true,
+    isCreationError: false,
+  })),
 );
 
 export const reducer = (state: TimerState | undefined, action: Action) =>
@@ -74,3 +104,7 @@ export const sessionsLoadingState = (state: TimerState) =>
 export const sessionsLoadedState = (state: TimerState) =>
   state.isSessionsLoaded;
 export const sessionsErrorState = (state: TimerState) => state.isSessionsError;
+export const creationLoadingState = (state: TimerState) =>
+  state.isCreationInProgress;
+export const creationLoadedState = (state: TimerState) => state.isCreationDone;
+export const creationErrorState = (state: TimerState) => state.isCreationError;

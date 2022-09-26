@@ -52,9 +52,9 @@ export class TimerModalComponent implements OnInit, OnDestroy {
   }
 
   finish(): void {
-    const time = this.duration - this.$currentTime.value;
+    const timeElapsed = this.duration - this.$currentTime.value;
 
-    this.modalController.dismiss({ time });
+    this.modalController.dismiss({ timeElapsed });
   }
 
   discard(): void {
