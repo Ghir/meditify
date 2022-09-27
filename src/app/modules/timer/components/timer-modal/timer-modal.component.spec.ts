@@ -94,6 +94,6 @@ describe('TimerModalComponent', () => {
     )[1];
     discardButton.nativeElement.click();
 
-    expect(modalControllerSpy.dismiss).toHaveBeenCalledWith({ time: 1 });
+    expect(modalControllerSpy.dismiss).toHaveBeenCalledWith({ timeElapsed: 1 });
   }));
 });

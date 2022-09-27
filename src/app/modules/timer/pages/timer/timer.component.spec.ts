@@ -3,6 +3,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IonicModule, IonInput, ModalController } from '@ionic/angular';
 
+import { provideMockStore } from '@ngrx/store/testing';
+
 // Components
 import { TimerComponent } from '@timer/pages/timer/timer.component';
 import { TimerDurationComponent } from '@timer/components/timer-duration/timer-duration.component';
@@ -21,7 +23,10 @@ describe('TimerComponent', () => {
       TestBed.configureTestingModule({
         declarations: [TimerComponent, TimerDurationComponent],
         imports: [IonicModule.forRoot()],
-        providers: [{ provide: ModalController, useValue: modalControllerSpy }],
+        providers: [
+          { provide: ModalController, useValue: modalControllerSpy },
+          provideMockStore(),
+        ],
       }).compileComponents();
 
       fixture = TestBed.createComponent(TimerComponent);

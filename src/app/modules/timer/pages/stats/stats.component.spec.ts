@@ -1,7 +1,11 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+
 import { IonicModule } from '@ionic/angular';
 
-import { StatsComponent } from './stats.component';
+import { provideMockStore } from '@ngrx/store/testing';
+
+// Components
+import { StatsComponent } from '@timer/pages/stats/stats.component';
 
 describe('StatsComponent', () => {
   let component: StatsComponent;
@@ -12,6 +16,15 @@ describe('StatsComponent', () => {
       TestBed.configureTestingModule({
         declarations: [StatsComponent],
         imports: [IonicModule.forRoot()],
+        providers: [
+          provideMockStore({
+            initialState: {
+              timer: {
+                timer: {},
+              },
+            },
+          }),
+        ],
       }).compileComponents();
 
       fixture = TestBed.createComponent(StatsComponent);
