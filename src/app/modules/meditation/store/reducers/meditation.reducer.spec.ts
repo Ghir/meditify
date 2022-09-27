@@ -43,7 +43,7 @@ describe('Meditation Reducer', () => {
     expect(result.isCategoriesLoaded).toBe(false);
   });
 
-  it('should set categories loading  success', () => {
+  it('should set categories loading success', () => {
     const result = reducer(
       initialState,
       loadCategoriesSuccess({

@@ -41,11 +41,11 @@ export class TimerComponent {
       // if session is not discarded
       if (data.data) {
         const timeElapsed = data.data.timeElapsed;
-        const date = Date.now() - timeElapsed * 1000; // when the session started
+        const timestamp = Date.now() - timeElapsed * 1000; // when the session started
 
         const session = {
           duration: timeElapsed,
-          date,
+          timestamp,
         };
 
         this.store.dispatch(createSession({ session }));

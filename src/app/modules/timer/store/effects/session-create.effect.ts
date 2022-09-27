@@ -17,7 +17,7 @@ import { SessionsService } from '@timer/services/sessions.service';
 
 @Injectable()
 export class SessionCreateEffect {
-  loadSessions$ = createEffect(() =>
+  createSession$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createSession),
       mergeMap(({ session }) =>
