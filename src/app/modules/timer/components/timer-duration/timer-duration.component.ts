@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 
 // Constants
-import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.constants';
+import { DEFAULT_DURATION_SECONDS } from '@timer/constants/duration.constant';
 
 @Component({
   selector: 'app-timer-duration',

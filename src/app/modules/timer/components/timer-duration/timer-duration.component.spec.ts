@@ -7,7 +7,7 @@ import { IonicModule, IonInput } from '@ionic/angular';
 import { TimerDurationComponent } from '@timer/components/timer-duration/timer-duration.component';
 
 // Constants
-import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.constants';
+import { DEFAULT_DURATION_SECONDS } from '@timer/constants/duration.constant';
 
 describe('TimerDurationComponent', () => {
   let component: TimerDurationComponent;

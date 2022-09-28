@@ -9,7 +9,7 @@ import { OverlayEventDetail } from '@ionic/core';
 import { TimerModalComponent } from '@timer/components/timer-modal/timer-modal.component';
 
 // Constants
-import { DEFAULT_DURATION_SECONDS } from '@timer/models/timer.constants';
+import { DEFAULT_DURATION_SECONDS } from '@timer/constants/duration.constant';
 
 // Actions
 import { createSession } from '@timer/store/actions/timer.actions';
