@@ -1,7 +1,10 @@
 # Introduction
 
-Personal project and base for a mobile app, structured to be expanded with new features.<br>
-It consists of two main functionalities: a Home page, that shows a motivational daily quote; a Meditation page, where the user can choose a meditation category, filter the meditations by type, and interact with the media in the modal that opens. Every practice can guide the user with text contents, audio and images.
+A personal project and base for a mobile application that will grow with more features. It consists of three main sections:
+
+- Home: motivational daily quote.
+- Meditation: choose a category and filter the meditations by type. The practice can be followed through text contents, audio and images.
+- Timer: autonomous meditation. The user sets a duration, starts the timer and then saves it when completed. The Stats page displays all the past sessions retrieved from the backend.
 
 &nbsp;
 
@@ -102,7 +105,7 @@ src/
 
 #### Common folder
 
-Contains the shared pieces of the application, like a UI Library.
+Contains the shared pieces of the application, like the UI Library.
 
 #### Modules folder
 
@@ -140,4 +143,4 @@ The application follows the [BEM](http://getbem.com/introduction/) methodology f
 components and naming the CSS classes.
 
 The flexbox model is used through [flex-layout](https://github.com/angular/flex-layout)
-for creating the layout of components.
+to create the layout of components.
