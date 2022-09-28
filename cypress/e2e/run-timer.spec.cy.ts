@@ -3,8 +3,16 @@ describe('Timer', () => {
     cy.log('I open the App');
     cy.visit('/')
 
-    cy.log('I go to Timer page');
+    cy.log('I click on the Timer tab');
     cy.get('ion-tab-button').eq(2).click();
+
+    cy.log('I go to stats page');
+    cy.get('.selection__button').eq(1).click()
+
+    cy.get('div.item').as('previousSessions')
+
+    cy.log('I go to timer page');
+    cy.get('.selection__button').eq(0).click()
 
     cy.log('I set timer duration');
     cy.get('input[type=number]').clear().type('1')
@@ -16,9 +24,14 @@ describe('Timer', () => {
     cy.get('.actions__icon').click()
   
     cy.log('I close timer');
-    cy.get('.actions__finish')
+    cy.get('.actions__finish').children().eq(1).click()
 
-    cy.log('I see the initial timer page');
-    cy.get('.timer__start')
+    cy.log('I go back to stats page');
+    cy.get('.selection__button').eq(1).click()
+
+    cy.log('I see the saved session');
+    cy.get('@previousSessions').then(count => {
+      cy.get('div.item').should('have.length', count.length + 1)
+    })
   });
 });
